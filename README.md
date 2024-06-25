@@ -17,6 +17,7 @@ The following improvements should be made:
 - `button` and `input` should be their own atom components
 - `index.ts` should be added to folders
 - linting added to vitests
+- Refactor to Sass and remove non-used selectors in `assets/css/style.css`
 
 ## Setup
 
