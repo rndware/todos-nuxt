@@ -54,7 +54,7 @@ yarn dev
 bun run dev
 ```
 
-## run Vitests
+## Run vitests
 
 ```bash
 npm run test
