@@ -28,7 +28,7 @@ const todoActionClick = parentEmit(emit, "todoActionClick");
       v-show="!item.archived"
       :todoData="item"
       @todoActionClick="todoActionClick"
-      :key="index"
+      :key="`todo-item-${index}_${item.id}`"
     />
     <div class="loading-spinner" v-show="props.loading">Loading...</div>
     <div class="todo-list-placeholder" v-show="showPlaceholder">No Content</div>

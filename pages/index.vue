@@ -1,8 +1,9 @@
 <script setup lang="ts">
 import { onMounted } from "vue";
 import { storeToRefs } from "pinia";
-import TodoList from "../components/organism/TodoList.vue";
 import { useTodosStore } from "../stores/todos";
+import TodoList from "../components/organism/TodoList.vue";
+import TodoInfo from "../components/molecules/TodoInfo.vue";
 
 const store = useTodosStore();
 const { todos, deleteAll, handleAction, fetchTodos } = store;
@@ -11,7 +12,6 @@ const { todos, deleteAll, handleAction, fetchTodos } = store;
 const { loading, starredCount, archivedCount, totalCount } = storeToRefs(store);
 
 onMounted(async () => {
-  // simulate longer api call
   await fetchTodos();
 });
 </script>
@@ -32,19 +32,12 @@ onMounted(async () => {
     >
       Delete All
     </button>
-    <div class="todo-info" v-show="totalCount > 0">
-      <div>
-        Starred:
-        <span class="todo-info__starred-count">{{ starredCount }}</span>
-      </div>
-      <div>
-        Archived:
-        <span class="todo-info__archived-count">{{ archivedCount }}</span>
-      </div>
-      <div>
-        Count: <span class="todo-info__total-count">{{ totalCount }}</span>
-      </div>
-    </div>
+    <TodoInfo
+      v-show="totalCount > 0"
+      :starredCount="starredCount"
+      :archivedCount="archivedCount"
+      :totalCount="totalCount"
+    />
   </div>
 </template>
 

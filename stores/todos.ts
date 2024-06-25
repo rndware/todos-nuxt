@@ -30,7 +30,9 @@ export const useTodosStore = defineStore("todos", {
       } else if (actionType === TodoAction.Star) {
         item.starred = !item.starred;
       } else if (actionType === TodoAction.Delete) {
-        this.todos.splice(id, 1);
+        // this.todos = this.todos.filter(item => item.id !== id); breaks reactivity
+        const index = this.todos.findIndex((item) => item.id === id);
+        this.todos.splice(index, 1);
       } else if (actionType === TodoAction.Archive) {
         item.archived = !item.archived;
       }

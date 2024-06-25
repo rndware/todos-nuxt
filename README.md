@@ -2,6 +2,22 @@
 
 A simple Nuxt 3 Todo App.
 
+<img src="https://github.com/rndware/todos-nuxt/blob/master/media/play.gif" width="65%"/>
+
+- Created using Vue3, Nuxt.js, TypeScript and Pinia
+- Sass uses [BEM](https://getbem.com/) like syntax
+- Components follow [Atomic Design Methodology](https://atomicdesign.bradfrost.com/chapter-2/)
+- Basic unit testing
+
+The following improvements should be made:
+
+- Additional unit testing
+- Sass variables for colours
+- `imports` to use # syntax e.g. `#components`
+- `button` and `input` should be their own atom components
+- `index.ts` should be added to folders
+- linting added to vitests
+
 ## Setup
 
 Make sure to install the dependencies:
@@ -38,38 +54,8 @@ yarn dev
 bun run dev
 ```
 
-## Production
-
-Build the application for production:
+## run Vitests
 
 ```bash
-# npm
-npm run build
-
-# pnpm
-pnpm run build
-
-# yarn
-yarn build
-
-# bun
-bun run build
+npm run test
 ```
-
-Locally preview production build:
-
-```bash
-# npm
-npm run preview
-
-# pnpm
-pnpm run preview
-
-# yarn
-yarn preview
-
-# bun
-bun run preview
-```
-
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.

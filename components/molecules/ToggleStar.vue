@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { computed } from "vue";
 import IconButton from "../atoms/IconButton.vue";
 
 const props = defineProps<{
@@ -6,16 +7,14 @@ const props = defineProps<{
 }>();
 
 const emit = defineEmits(["toggled"]);
+
+const iconName = computed(() => (props.starred ? "star-fill" : "star"));
+
 </script>
 
 <template>
   <div class="toggle-star">
-    <IconButton
-      v-if="props.starred"
-      iconName="star-fill"
-      @click="emit('toggled')"
-    />
-    <IconButton v-else iconName="star" @click="emit('toggled')" />
+    <IconButton :iconName="iconName" @click="emit('toggled')" />
   </div>
 </template>
 
