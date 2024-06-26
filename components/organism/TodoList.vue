@@ -41,7 +41,7 @@ const todoActionClick = parentEmit(emit, "todoActionClick");
 
 <style scoped lang="scss">
 .todo-list {
-  border-radius: 10px;
+  border-radius: $border-radius;
   border: 1px solid $gray;
   max-width: 28rem;
   overflow: hidden;
