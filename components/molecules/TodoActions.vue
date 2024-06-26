@@ -25,7 +25,11 @@ const toggleActionPanel = () => {
       iconName="ellipsis-v"
       @click="toggleActionPanel"
     />
-    <div class="todo-actions__panel" v-show="showActionPanel">
+    <div
+      class="todo-actions__panel"
+      :class="{ active: showActionPanel }"
+      v-show="showActionPanel"
+    >
       <button @click="todoActionClick(TodoAction.Delete)">Delete</button>
       <button @click="todoActionClick(TodoAction.Archive)">Archive</button>
     </div>
@@ -43,7 +47,10 @@ const toggleActionPanel = () => {
   }
 
   &__panel {
-    white-space: nowrap;
+    &.active button {
+      margin-bottom: 0.2rem;
+    }
+
     button {
       margin-left: 0.75rem;
     }

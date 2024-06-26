@@ -33,6 +33,7 @@ const doneClick = () => {
     <div class="todo-item__controls">
       <TodoActions @todoActionClick="todoActionClick" />
       <ToggleStar
+        class="todo-item__toggle-star"
         :starred="starred"
         @toggled="todoActionClick(TodoAction.Star)"
       />
@@ -53,6 +54,11 @@ const doneClick = () => {
 
   &__text {
     padding: 0.5rem 1rem 0.5rem 0;
+  }
+
+  &__toggle-star {
+    display: flex;
+    align-items: center;
   }
 
   &__controls {
