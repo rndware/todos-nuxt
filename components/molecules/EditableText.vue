@@ -62,6 +62,8 @@ const pencilClasses = computed(() => ({
 
   &__input {
     margin-right: 0.5rem;
+    padding: 0.5rem;
+    border-radius: 10px;
   }
 }
 

@@ -47,12 +47,12 @@ const toggleActionPanel = () => {
   }
 
   &__panel {
-    &.active button {
-      margin-bottom: 0.2rem;
-    }
-
     button {
       margin-left: 0.75rem;
+    }
+
+    &.active button {
+      margin-bottom: 0.2rem;
     }
   }
 }
