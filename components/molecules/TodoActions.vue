@@ -42,7 +42,6 @@ const toggleActionPanel = () => {
   align-items: center;
 
   &__toggle {
-    cursor: pointer;
     padding: 0.5rem;
   }
 

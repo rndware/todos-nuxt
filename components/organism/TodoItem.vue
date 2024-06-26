@@ -64,7 +64,7 @@ const doneClick = () => {
   &__controls {
     display: flex;
 
-    & > div {
+    & div {
       margin-left: 0.5rem;
     }
   }
