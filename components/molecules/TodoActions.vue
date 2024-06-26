@@ -27,7 +27,7 @@ const toggleActionPanel = () => {
     />
     <div
       class="todo-actions__panel"
-      :class="{ active: showActionPanel }"
+      :class="{ open: showActionPanel }"
       v-show="showActionPanel"
     >
       <button @click="todoActionClick(TodoAction.Delete)">Delete</button>
@@ -51,7 +51,7 @@ const toggleActionPanel = () => {
       margin-left: 0.75rem;
     }
 
-    &.active button {
+    &.open button {
       margin-bottom: 0.2rem;
     }
   }

@@ -6,6 +6,26 @@ import IconButton from "../components/atoms/IconButton.vue";
 import { TodoAction } from "../enums";
 
 describe("TodoActions", () => {
+  it("should toggle showActionPanel on IconButton click", async () => {
+    const wrapper = mount(TodoActions);
+
+    const toggleButton = wrapper.find(".todo-actions__toggle");
+
+    // Check if button exists
+    expect(toggleButton.exists()).toBe(true);
+
+    await toggleButton.trigger("click");
+
+    // Check action panel is open
+    expect(wrapper.find(".todo-actions__panel").classes()).toContain("open");
+
+    await toggleButton.trigger("click");
+
+    // Check action panel is closed
+    expect(wrapper.find(".todo-actions__panel").classes()).not.toContain(
+      "open"
+    ); 
+  });
   it('emits "todoActionClick" event with correct action type when buttons are clicked', async () => {
     const wrapper = mount(TodoActions);
 
