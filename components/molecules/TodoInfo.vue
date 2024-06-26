@@ -29,28 +29,25 @@ const props = defineProps<{
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
-  border: 1px solid #3d3d3d;
-  border-radius: 10px;
+  border: 1px solid $gray;
+  border-radius: $border-radius;
   padding: 1rem;
   
-  > div {
+  div {
     min-width: 6rem;
+  }
+  span {
+    font-weight: bold;
   }
   
   &__starred-count {
-    flex-grow: 1;
-    font-weight: bold;
-    color: yellow;
+    color: $yellow;
   }
   &__archived-count {
-    flex-grow: 1;
-    font-weight: bold;
-    color: red;
+    color: $red;
   }
   &__total-count {
-    flex-grow: 1;
-    font-weight: bold;
-    color: green;
+    color: $green;
   }
 }
 </style>

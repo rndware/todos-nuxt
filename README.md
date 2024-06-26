@@ -14,7 +14,6 @@ The following improvements should be made:
 - Additional unit testing
 - Improve responsiveness at lower device widths
 - Handle large todo item names better
-- Sass variables for colours
 - `imports` to use # syntax e.g. `#components`
 - `button` and `input` should be their own atom components
 - `index.ts` should be added to folders for better imports

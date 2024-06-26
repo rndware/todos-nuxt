@@ -5,7 +5,14 @@ export default defineNuxtConfig({
     // ...
     "@pinia/nuxt",
   ],
-  css: [
-    "primeicons/primeicons.css",
-  ],
+  css: ["primeicons/primeicons.css"],
+  vite: {
+    css: {
+      preprocessorOptions: {
+        scss: {
+          additionalData: '@import "@/assets/scss/variables.scss";',
+        },
+      },
+    },
+  },
 });

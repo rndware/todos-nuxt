@@ -30,20 +30,26 @@ const todoActionClick = parentEmit(emit, "todoActionClick");
       @todoActionClick="todoActionClick"
       :key="`todo-item-${index}_${item.id}`"
     />
-    <div class="loading-spinner" v-show="props.loading">Loading...</div>
-    <div class="todo-list-placeholder" v-show="showPlaceholder">No Content</div>
+    <div class="todo-list__status">
+      <div class="loading-spinner" v-show="props.loading">Loading...</div>
+      <div class="todo-list-placeholder" v-show="showPlaceholder">
+        No Content
+      </div>
+    </div>
   </div>
 </template>
 
 <style scoped lang="scss">
 .todo-list {
   border-radius: 10px;
-  border: 1px solid #3d3d3d;
+  border: 1px solid $gray;
   max-width: 28rem;
   overflow: hidden;
 }
-.loading-spinner,
-.todo-list-placeholder {
-  padding: 20px;
+
+.todo-list__status {
+  div {
+    padding: 1rem;
+  }
 }
 </style>
