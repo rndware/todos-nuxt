@@ -33,7 +33,13 @@ const pencilClasses = computed(() => ({
     <div v-if="!editing" class="editable-text__text">
       {{ model }}
     </div>
-    <input v-else class="editable-text__input" type="text" v-model="model" />
+    <input
+      v-else
+      class="editable-text__input"
+      type="text"
+      v-model="model"
+      @keyup.enter="doneEditing"
+    />
     <IconButton
       v-if="!editing"
       v-show="!(editing && hovering)"

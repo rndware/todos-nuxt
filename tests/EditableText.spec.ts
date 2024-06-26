@@ -5,7 +5,7 @@ import EditableText from "../components/molecules/EditableText.vue";
 import IconButton from "../components/atoms/IconButton.vue";
 
 describe("EditableText", () => {
-  it("renders text and input fields correctly", async () => {
+  it("renders text and input fields correctly including toggling via button", async () => {
     const wrapper = mount(EditableText);
 
     // Initial state: should not be editing
@@ -19,8 +19,12 @@ describe("EditableText", () => {
 
     // Simulate clicking on check icon to finish editing
     await wrapper.find(".editable-text__done").trigger("click");
+
+    // Show revert back to non-editing mode
     expect(wrapper.find(".editable-text__text").exists()).toBe(true);
     expect(wrapper.find(".editable-text__input").exists()).toBe(false);
+
+    // TO-DO: refactor to check enter keypress and done button click
   });
 
   it('emits "edited" event when done editing', async () => {
