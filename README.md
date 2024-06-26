@@ -12,7 +12,8 @@ A simple Nuxt 3 Todo App.
 The following improvements should be made:
 
 - Additional unit testing
-- Make more responsive at lower device widths
+- Improve responsiveness at lower device widths
+- Handle large todo item names better
 - Sass variables for colours
 - `imports` to use # syntax e.g. `#components`
 - `button` and `input` should be their own atom components

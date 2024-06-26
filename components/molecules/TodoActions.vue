@@ -42,8 +42,11 @@ const toggleActionPanel = () => {
     padding: 0.5rem;
   }
 
-  &__panel button {
-    margin-left: 0.75rem;
+  &__panel {
+    white-space: nowrap;
+    button {
+      margin-left: 0.75rem;
+    }
   }
 }
 </style>

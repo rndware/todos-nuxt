@@ -35,6 +35,7 @@ const pencilClasses = computed(() => ({
     </div>
     <input v-else class="editable-text__input" type="text" v-model="model" />
     <IconButton
+      v-if="!editing"
       v-show="!(editing && hovering)"
       iconName="pencil"
       :class="pencilClasses"
@@ -43,7 +44,7 @@ const pencilClasses = computed(() => ({
     <IconButton
       class="editable-text__done"
       iconName="check"
-      v-show="editing && hovering"
+      v-show="editing"
       @click="doneEditing"
     />
   </div>
@@ -55,6 +56,7 @@ const pencilClasses = computed(() => ({
   display: flex;
 
   &__text {
+    text-align: start;
     padding-right: 0.75rem;
   }
 

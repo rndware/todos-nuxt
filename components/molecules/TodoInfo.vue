@@ -28,13 +28,13 @@ const props = defineProps<{
 .todo-info {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: space-around;
   border: 1px solid #3d3d3d;
   border-radius: 10px;
   padding: 1rem;
   
   > div {
-    min-width: 5.5rem;
+    min-width: 6rem;
   }
   
   &__starred-count {

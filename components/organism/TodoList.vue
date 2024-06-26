@@ -39,6 +39,7 @@ const todoActionClick = parentEmit(emit, "todoActionClick");
 .todo-list {
   border-radius: 10px;
   border: 1px solid #3d3d3d;
+  max-width: 28rem;
   overflow: hidden;
 }
 .loading-spinner,
