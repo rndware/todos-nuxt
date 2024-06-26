@@ -12,10 +12,11 @@ A simple Nuxt 3 Todo App.
 The following improvements should be made:
 
 - Additional unit testing
+- Make more responsive at lower device widths
 - Sass variables for colours
 - `imports` to use # syntax e.g. `#components`
 - `button` and `input` should be their own atom components
-- `index.ts` should be added to folders
+- `index.ts` should be added to folders for better imports
 - linting added to vitests
 - Refactor to Sass and remove non-used selectors in `assets/css/style.css`
 
