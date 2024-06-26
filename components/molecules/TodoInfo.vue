@@ -27,20 +27,28 @@ const props = defineProps<{
 <style scoped lang="scss">
 .todo-info {
   display: flex;
-  justify-content: space-between;
+  flex-wrap: wrap;
+  justify-content: center;
   border: 1px solid #3d3d3d;
   border-radius: 10px;
   padding: 1rem;
-
+  
+  > div {
+    min-width: 5.5rem;
+  }
+  
   &__starred-count {
+    flex-grow: 1;
     font-weight: bold;
     color: yellow;
   }
   &__archived-count {
+    flex-grow: 1;
     font-weight: bold;
     color: red;
   }
   &__total-count {
+    flex-grow: 1;
     font-weight: bold;
     color: green;
   }
