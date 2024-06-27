@@ -10,7 +10,7 @@ const props = defineProps<{
   todoData: TodoItemData;
 }>();
 
-const textModel = ref(props.todoData.text);
+const textModel = ref<string>(props.todoData.text);
 // note: without toRefs deconstruction breaks reactivity
 const { id, starred } = toRefs(props.todoData);
 

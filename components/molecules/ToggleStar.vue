@@ -9,7 +9,6 @@ const props = defineProps<{
 const emit = defineEmits(["toggled"]);
 
 const iconName = computed(() => (props.starred ? "star-fill" : "star"));
-
 </script>
 
 <template>

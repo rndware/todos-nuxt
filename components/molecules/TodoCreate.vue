@@ -1,12 +1,16 @@
 <script setup lang="ts">
-const model = defineModel();
+import { ref } from "vue";
+const model = ref<string>("");
 
 const emit = defineEmits(["create"]);
 
-const submit = (e: any) => {
+const submit = (e: Event) => {
   e.preventDefault();
 
-  emit("create", model.value);
+  if (model.value !== "") {
+    emit("create", model.value);
+  }
+
   model.value = "";
 };
 </script>
@@ -18,6 +22,7 @@ const submit = (e: any) => {
         type="text"
         name="todo-create"
         v-model="model"
+        aria-label="Create a new todo item"
         placeholder="I need to..."
       />
     </form>

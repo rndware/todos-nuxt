@@ -7,7 +7,7 @@ const emit = defineEmits<{
   todoActionClick: [actionType: TodoAction];
 }>();
 
-const showActionPanel = ref(false);
+const showActionPanel = ref<boolean>(false);
 
 const todoActionClick = (actionType: TodoAction) => {
   emit("todoActionClick", actionType);

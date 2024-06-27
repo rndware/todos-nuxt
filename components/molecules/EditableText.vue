@@ -6,8 +6,8 @@ const model = defineModel();
 
 const emit = defineEmits(["edited"]);
 
-const editing = ref(false);
-const hovering = ref(false);
+const editing = ref<boolean>(false);
+const hovering = ref<boolean>(false);
 
 const doneEditing = () => {
   editing.value = false;
