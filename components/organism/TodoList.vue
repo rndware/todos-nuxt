@@ -11,7 +11,7 @@ const props = defineProps<{
 }>();
 
 const emit = defineEmits<{
-  todoActionClick: [actionType: TodoAction, id: number, text?: string];
+  todoActionClick: [actionType: TodoAction, id: string, text?: string];
 }>();
 
 const showPlaceholder = computed(

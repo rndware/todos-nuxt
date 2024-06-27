@@ -1,4 +1,5 @@
 import { defineStore } from "pinia";
+import { v4 as uuid } from 'uuid';
 import { type TodoItemData, TodoAction } from "../enums";
 
 export const useTodosStore = defineStore("todos", {
@@ -17,11 +18,20 @@ export const useTodosStore = defineStore("todos", {
 
       this.loading = false;
     },
+    createTodo(text: string) {
+      console.log("added todo");
+      this.todos.push({
+        id: uuid(),
+        text,
+        starred: false,
+        archived: false,
+      });
+    },
     deleteAll() {
       // note: this.todos = [] breaks reactivity
       this.todos.splice(0, this.todos.length);
     },
-    handleAction(actionType: TodoAction, id: number, text?: string) {
+    handleAction(actionType: TodoAction, id: string, text?: string) {
       const item = this.todos.find((item) => item.id === id);
       if (!item) return;
 

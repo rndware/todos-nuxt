@@ -15,7 +15,7 @@ const textModel = ref(props.todoData.text);
 const { id, starred } = toRefs(props.todoData);
 
 const emit = defineEmits<{
-  todoActionClick: [actionType: TodoAction, id: number, text?: string];
+  todoActionClick: [actionType: TodoAction, id: string, text?: string];
 }>();
 
 const todoActionClick = (actionType: TodoAction) => {
