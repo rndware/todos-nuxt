@@ -32,14 +32,14 @@ const props = defineProps<{
   border: 1px solid $gray;
   border-radius: $border-radius;
   padding: 1rem;
-  
+
   div {
     min-width: 6rem;
   }
   span {
     font-weight: bold;
   }
-  
+
   &__starred-count {
     color: $yellow;
   }

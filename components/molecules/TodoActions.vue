@@ -30,8 +30,17 @@ const toggleActionPanel = () => {
       :class="{ open: showActionPanel }"
       v-show="showActionPanel"
     >
-      <button @click="todoActionClick(TodoAction.Delete)">Delete</button>
-      <button @click="todoActionClick(TodoAction.Archive)">Archive</button>
+      <IconButton
+        class="action-button"
+        iconName="trash"
+        @click="todoActionClick(TodoAction.Delete)"
+      />
+      <button
+        class="action-button"
+        @click="todoActionClick(TodoAction.Archive)"
+      >
+        Archive
+      </button>
     </div>
   </div>
 </template>
@@ -46,12 +55,10 @@ const toggleActionPanel = () => {
   }
 
   &__panel {
+    display: flex;
+
     button {
       margin-left: 0.75rem;
-    }
-
-    &.open button {
-      margin-bottom: 0.2rem;
     }
   }
 }
