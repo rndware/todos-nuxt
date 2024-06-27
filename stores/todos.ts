@@ -19,7 +19,6 @@ export const useTodosStore = defineStore("todos", {
       this.loading = false;
     },
     createTodo(text: string) {
-      console.log("added todo");
       this.todos.push({
         id: uuid(),
         text,

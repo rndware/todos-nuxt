@@ -20,7 +20,7 @@ onMounted(async () => {
 <template>
   <div class="todo-list-page">
     <h1>Todos</h1>
-    <TodoCreate @create="createTodo"/>
+    <TodoCreate @create="createTodo" />
     <TodoList
       :todo-data="todos"
       :loading="loading"
