@@ -2,7 +2,9 @@
 
 A simple Nuxt 3 Todo App.
 
-<img src="https://github.com/rndware/todos-nuxt/blob/master/media/play.gif" width="65%"/>
+<img src="https://github.com/rndware/todos-nuxt/blob/master/media/add-new-item.gif" width="65%"/>
+<img src="https://github.com/rndware/todos-nuxt/blob/master/media/update-item.gif" width="65%"/>
+<img src="https://github.com/rndware/todos-nuxt/blob/master/media/multi-task.gif" width="65%"/>
 
 - Created using Vue3, Nuxt.js, TypeScript and Pinia
 - Sass uses [BEM](https://getbem.com/) like syntax
