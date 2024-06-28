@@ -7,10 +7,10 @@ import TodoList from "../components/organism/TodoList.vue";
 import TodoInfo from "../components/molecules/TodoInfo.vue";
 
 const store = useTodosStore();
-const { todos, deleteAll, handleAction, fetchTodos, createTodo } = store;
+const { deleteAll, handleAction, fetchTodos, createTodo } = store;
 
 // primitives are not reactive in pinia by default, only objects are
-const { loading, starredCount, archivedCount, totalCount } = storeToRefs(store);
+const { loading, starredCount, archivedCount, totalCount, todos } = storeToRefs(store);
 
 onMounted(async () => {
   await fetchTodos();

@@ -12,9 +12,7 @@ export const useTodosStore = defineStore("todos", {
       this.loading = true;
 
       const { todos } = await $fetch("/api/data");
-
-      // note: this.todos = todoData breaks reactivity
-      this.todos.splice(0, this.todos.length, ...todos);
+      this.todos = todos;
 
       this.loading = false;
     },
@@ -27,8 +25,7 @@ export const useTodosStore = defineStore("todos", {
       });
     },
     deleteAll() {
-      // note: this.todos = [] breaks reactivity
-      this.todos.splice(0, this.todos.length);
+      this.todos = [];
     },
     handleAction(actionType: TodoAction, id: string, text?: string) {
       const item = this.todos.find((item) => item.id === id);
@@ -39,9 +36,7 @@ export const useTodosStore = defineStore("todos", {
       } else if (actionType === TodoAction.Star) {
         item.starred = !item.starred;
       } else if (actionType === TodoAction.Delete) {
-        // this.todos = this.todos.filter(item => item.id !== id); breaks reactivity
-        const index = this.todos.findIndex((item) => item.id === id);
-        this.todos.splice(index, 1);
+        this.todos = this.todos.filter(item => item.id !== id);
       } else if (actionType === TodoAction.Archive) {
         item.archived = !item.archived;
       }
