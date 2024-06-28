@@ -1,8 +1,8 @@
 <script setup lang="ts">
 import { computed } from "vue";
-import { TodoAction, type TodoItemData } from "../../enums";
-import useHighlightNewTodo from "../../composables/useHighlightNewTodo";
-import { parentEmit } from "../../utils/parentEmit";
+import { TodoAction, type TodoItemData } from "@/enums";
+import { useHighlightNewTodo } from "@/composables";
+import { parentEmit } from "@/utils";
 
 import TodoItem from "./TodoItem.vue";
 

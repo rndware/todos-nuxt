@@ -1,11 +1,9 @@
-// Icon.spec.ts
-
 import { describe, it, expect } from "vitest";
 import { mount } from "@vue/test-utils";
 
-import IconButton from "../components/atoms/IconButton.vue";
+import { IconButton } from "@/components/atoms";
 
-describe("IconButton.vue", () => {
+describe("IconButton", () => {
   it("renders a button with correct class when iconName prop is provided", async () => {
     const iconName = "some-icon";
     const wrapper = mount(IconButton, {

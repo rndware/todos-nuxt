@@ -1,9 +1,9 @@
 import { describe, it, expect } from "vitest";
 import { mount } from "@vue/test-utils";
 
-import TodoActions from "../components/molecules/TodoActions.vue";
-import IconButton from "../components/atoms/IconButton.vue";
-import { TodoAction } from "../enums";
+import { IconButton } from "@/components/atoms";
+import { TodoActions } from "@/components/molecules";
+import { TodoAction } from "@/enums";
 
 describe("TodoActions", () => {
   it("should toggle showActionPanel on IconButton click", async () => {
@@ -24,7 +24,7 @@ describe("TodoActions", () => {
     // Check action panel is closed
     expect(wrapper.find(".todo-actions__panel").classes()).not.toContain(
       "open"
-    ); 
+    );
   });
   it('emits "todoActionClick" event with correct action type when buttons are clicked', async () => {
     const wrapper = mount(TodoActions);

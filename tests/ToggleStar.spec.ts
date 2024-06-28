@@ -1,7 +1,8 @@
 import { describe, it, expect } from "vitest";
 import { mount } from "@vue/test-utils";
-import ToggleStar from "../components/molecules/ToggleStar.vue";
-import IconButton from "../components/atoms/IconButton.vue";
+
+import { ToggleStar } from "@/components/molecules";
+import { IconButton } from "@/components/atoms";
 
 describe("ToggleStar", () => {
   it("renders star icon correctly", async () => {
@@ -21,7 +22,9 @@ describe("ToggleStar", () => {
       },
     });
 
-    expect(wrapper.findComponent(IconButton).props("iconName")).toBe("star-fill");
+    expect(wrapper.findComponent(IconButton).props("iconName")).toBe(
+      "star-fill"
+    );
   });
 
   it('emits "toggled" event when star icon is clicked', async () => {

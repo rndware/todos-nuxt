@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { computed } from "vue";
-import IconButton from "../atoms/IconButton.vue";
+import { IconButton } from "@/components/atoms";
 
 const props = defineProps<{
   starred: boolean;

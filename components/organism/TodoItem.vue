@@ -1,10 +1,8 @@
 <script setup lang="ts">
 import { defineEmits, ref, toRefs } from "vue";
-import { TodoAction, type TodoItemData } from "../../enums";
+import { TodoAction, type TodoItemData } from "@/enums";
 
-import TodoActions from "../molecules/TodoActions.vue";
-import ToggleStar from "../molecules/ToggleStar.vue";
-import EditableText from "../molecules/EditableText.vue";
+import { TodoActions, ToggleStar, EditableText } from "@/components/molecules";
 
 const props = defineProps<{
   todoData: TodoItemData;

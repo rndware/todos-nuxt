@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { ref, computed } from "vue";
-import IconButton from "../atoms/IconButton.vue";
+import { IconButton } from "@/components/atoms";
 
 const model = defineModel();
 

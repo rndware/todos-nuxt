@@ -16,9 +16,7 @@ The following improvements should be made:
 - Additional unit testing
 - Improve responsiveness at lower device widths
 - Handle large todo item names better
-- `imports` to use # syntax e.g. `#components`
 - `button` and `input` should be their own atom components
-- `index.ts` should be added to folders for better imports
 - linting added to vitests
 - Refactor to Sass and remove non-used selectors in `assets/css/style.css`
 

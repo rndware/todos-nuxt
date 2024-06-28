@@ -1,8 +1,8 @@
 import { mount } from "@vue/test-utils";
-
 import { describe, it, expect } from "vitest";
-import EditableText from "../components/molecules/EditableText.vue";
-import IconButton from "../components/atoms/IconButton.vue";
+
+import { IconButton } from "@/components/atoms";
+import { EditableText } from "@/components/molecules";
 
 describe("EditableText", () => {
   it("renders text and input fields correctly including toggling via button", async () => {

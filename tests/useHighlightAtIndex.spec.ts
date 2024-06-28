@@ -1,6 +1,7 @@
 import { reactive, nextTick } from "vue";
 import { describe, it, expect } from "vitest";
-import useHighlightNewTodo from "../composables/useHighlightNewTodo";
+
+import { useHighlightNewTodo } from "@/composables"
 
 describe("useHighlightNewTodo", () => {
   it("should highlight the last added todo", async () => {

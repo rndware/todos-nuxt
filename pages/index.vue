@@ -1,16 +1,16 @@
 <script setup lang="ts">
 import { onMounted } from "vue";
 import { storeToRefs } from "pinia";
-import { useTodosStore } from "../stores/todos";
-import TodoCreate from "../components/molecules/TodoCreate.vue";
-import TodoList from "../components/organism/TodoList.vue";
-import TodoInfo from "../components/molecules/TodoInfo.vue";
+import { useTodosStore } from "@/stores/todos";
+import { TodoCreate, TodoInfo } from "@/components/molecules";
+import { TodoList } from "@/components/organism";
 
 const store = useTodosStore();
 const { deleteAll, handleAction, fetchTodos, createTodo } = store;
 
 // primitives are not reactive in pinia by default, only objects are
-const { loading, starredCount, archivedCount, totalCount, todos } = storeToRefs(store);
+const { loading, starredCount, archivedCount, totalCount, todos } =
+  storeToRefs(store);
 
 onMounted(async () => {
   await fetchTodos();
