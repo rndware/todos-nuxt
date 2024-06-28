@@ -13,8 +13,7 @@ export const useTodosStore = defineStore("todos", {
 
       const { todos } = await $fetch("/api/data");
 
-      // note: this.todos = todoData breaks reactivity
-      this.todos.splice(0, this.todos.length, ...todos);
+      this.todos = todos;
 
       this.loading = false;
     },
@@ -27,8 +26,7 @@ export const useTodosStore = defineStore("todos", {
       });
     },
     deleteAll() {
-      // note: this.todos = [] breaks reactivity
-      this.todos.splice(0, this.todos.length);
+      this.todos = [];
     },
     handleAction(actionType: TodoAction, id: string, text?: string) {
       const item = this.todos.find((item) => item.id === id);

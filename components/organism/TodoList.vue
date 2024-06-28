@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { computed } from "vue";
 import { TodoAction, type TodoItemData } from "../../enums";
+import useHighlightNewItem from "../../composables/useHighlightNewItem";
 import { parentEmit } from "../../utils/parentEmit";
 
 import TodoItem from "./TodoItem.vue";
@@ -18,7 +19,10 @@ const showPlaceholder = computed(
   () => props.todoData.length === 0 && !props.loading
 );
 
+const { isHighlighted } = useHighlightNewItem(props.todoData);
+
 const todoActionClick = parentEmit(emit, "todoActionClick");
+
 </script>
 
 <template>
@@ -27,6 +31,7 @@ const todoActionClick = parentEmit(emit, "todoActionClick");
       v-for="(item, index) in props.todoData"
       v-show="!item.archived"
       :todoData="item"
+      :highlighted="isHighlighted(index)"
       @todoActionClick="todoActionClick"
       :key="`todo-item-${index}_${item.id}`"
     />
@@ -53,3 +58,4 @@ const todoActionClick = parentEmit(emit, "todoActionClick");
   }
 }
 </style>
+../../composables/useHighlightNewItem
