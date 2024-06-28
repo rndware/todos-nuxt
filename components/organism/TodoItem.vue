@@ -8,9 +8,11 @@ import EditableText from "../molecules/EditableText.vue";
 
 const props = defineProps<{
   todoData: TodoItemData;
+  highlighted?: boolean;
 }>();
 
 const textModel = ref<string>(props.todoData.text);
+
 // note: without toRefs deconstruction breaks reactivity
 const { id, starred } = toRefs(props.todoData);
 
@@ -29,7 +31,11 @@ const doneClick = () => {
 
 <template>
   <div class="todo-item">
-    <EditableText v-model="textModel" @edited="doneClick" />
+    <EditableText
+      :class="{ highlighted: props.highlighted }"
+      v-model="textModel"
+      @edited="doneClick"
+    />
     <div class="todo-item__controls">
       <TodoActions @todoActionClick="todoActionClick" />
       <ToggleStar
@@ -67,6 +73,22 @@ const doneClick = () => {
     & div {
       margin-left: 0.5rem;
     }
+  }
+
+  @keyframes flash {
+    0% {
+      color: inherit;
+    }
+    50% {
+      color: $green;
+    }
+    100% {
+      color: inherit;
+    }
+  }
+
+  .highlighted {
+    animation: flash 1s forwards;
   }
 }
 </style>
