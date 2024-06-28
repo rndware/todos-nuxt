@@ -19,7 +19,7 @@ onMounted(async () => {
 
 <template>
   <div class="todo-list-page">
-    <h1>Todos</h1>
+    <h1>Todos️ 📒</h1>
     <TodoCreate @create="createTodo" />
     <TodoList
       :todo-data="todos"

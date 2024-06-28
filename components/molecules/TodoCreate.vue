@@ -18,12 +18,13 @@ const submit = (e: Event) => {
 <template>
   <div class="todo-create">
     <form class="todo-create__form" action="submit" @submit="submit">
+      <label for="todo-create">✏️</label>
       <input
         type="text"
         name="todo-create"
         v-model="model"
         aria-label="Create a new todo item"
-        placeholder="I need to..."
+        placeholder=" I need to..."
       />
     </form>
   </div>
