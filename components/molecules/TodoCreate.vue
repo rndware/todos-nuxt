@@ -17,7 +17,7 @@ const submit = (e: Event) => {
 
 <template>
   <div class="todo-create">
-    <form class="todo-create__form" action="submit" @submit="submit">
+    <form class="todo-create__form" @submit="submit">
       <label for="todo-create">✏️</label>
       <input
         type="text"
