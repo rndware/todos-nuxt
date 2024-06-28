@@ -12,7 +12,6 @@ export const useTodosStore = defineStore("todos", {
       this.loading = true;
 
       const { todos } = await $fetch("/api/data");
-
       this.todos = todos;
 
       this.loading = false;
@@ -37,9 +36,7 @@ export const useTodosStore = defineStore("todos", {
       } else if (actionType === TodoAction.Star) {
         item.starred = !item.starred;
       } else if (actionType === TodoAction.Delete) {
-        // this.todos = this.todos.filter(item => item.id !== id); breaks reactivity
-        const index = this.todos.findIndex((item) => item.id === id);
-        this.todos.splice(index, 1);
+        this.todos = this.todos.filter(item => item.id !== id);
       } else if (actionType === TodoAction.Archive) {
         item.archived = !item.archived;
       }

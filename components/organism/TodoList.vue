@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { computed } from "vue";
 import { TodoAction, type TodoItemData } from "../../enums";
-import useHighlightNewItem from "../../composables/useHighlightNewItem";
+import useHighlightNewTodo from "../../composables/useHighlightNewTodo";
 import { parentEmit } from "../../utils/parentEmit";
 
 import TodoItem from "./TodoItem.vue";
@@ -19,10 +19,10 @@ const showPlaceholder = computed(
   () => props.todoData.length === 0 && !props.loading
 );
 
-const { isHighlighted } = useHighlightNewItem(props.todoData);
+// pass all props or breaks reactivity
+const { isHighlighted } = useHighlightNewTodo(props);
 
 const todoActionClick = parentEmit(emit, "todoActionClick");
-
 </script>
 
 <template>
@@ -58,4 +58,3 @@ const todoActionClick = parentEmit(emit, "todoActionClick");
   }
 }
 </style>
-../../composables/useHighlightNewItem

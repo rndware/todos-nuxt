@@ -1,50 +1,42 @@
-import { nextTick, reactive} from "vue";
-import { describe, it, expect, beforeEach } from "vitest";
-import useHighlightNewItem from "../composables/useHighlightNewItem";
+import { reactive, nextTick } from "vue";
+import { describe, it, expect } from "vitest";
+import useHighlightNewTodo from "../composables/useHighlightNewTodo";
 
-describe("useHighlightNewItem", () => {
-  let array: string[];
-  let items = ["item1", "item2", "item3"];
+describe("useHighlightNewTodo", () => {
+  it("should highlight the last added todo", async () => {
+    const todoData = reactive<string[]>([]);
+    const { isHighlighted } = useHighlightNewTodo({ todoData });
 
-  beforeEach(() => {
-    array = reactive<string[]>([]);
+    expect(isHighlighted(0)).toBe(false);
+
+    todoData.push("New Todo");
+    await nextTick();
+
+    expect(isHighlighted(0)).toBe(true);
   });
 
-  it("should not highlight the last item when array is first added", async () => {
-    const { isHighlighted } = useHighlightNewItem(array);
+  it("should not highlight if multiple todos are added", async () => {
+    const todoData = reactive<string[]>([]);
+    const { isHighlighted } = useHighlightNewTodo({ todoData });
 
-    // add array first time
-    array.splice(0, items.length, ...items);
+    expect(isHighlighted(0)).toBe(false);
 
+    todoData.push("New Todo 1", "New Todo 2");
     await nextTick();
-    expect(isHighlighted(array.length - 1)).toBe(false);
-  });
-  it("should highlight the last item when a new item is added after", async () => {
-    const { isHighlighted } = useHighlightNewItem(array);
- 
-    array.splice(0, items.length, ...items);
 
-    array.push("item4");
-    await nextTick();
-    expect(isHighlighted(array.length - 1)).toBe(false);
-
-    array.push("item5");
-    await nextTick();
-    expect(isHighlighted(array.length - 1)).toBe(true);
+    expect(isHighlighted(0)).toBe(false);
+    expect(isHighlighted(1)).toBe(false);
   });
 
-  it("should not highlight the last item when an item is removed", async () => {
-    const { isHighlighted } = useHighlightNewItem(array);
- 
-    array.splice(0, items.length, ...items);
+  it("should not highlight if a todo is removed", async () => {
+    const todoData = reactive<string[]>([]);
+    const { isHighlighted } = useHighlightNewTodo({ todoData });
 
-    array.push("item4");
-    await nextTick();
-    expect(isHighlighted(array.length - 1)).toBe(false);
+    expect(isHighlighted(0)).toBe(false);
 
-    // remove item from array
-    array.pop();
+    todoData.pop();
     await nextTick();
-    expect(isHighlighted(array.length - 1)).toBe(false);
+
+    expect(isHighlighted(0)).toBe(false);
   });
 });
