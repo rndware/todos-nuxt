@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { useTodosStore } from "@/stores/todos";
+import { TodoListApp } from "@/components/templates";
 
 const store = useTodosStore();
 const { todos: rawTodos } = await $fetch("/api/data");
@@ -11,6 +12,6 @@ store.$patch({
 
 <template>
   <div class="todo-list-page">
-    <TemplatesTodoListApp />
+    <TodoListApp />
   </div>
 </template>
