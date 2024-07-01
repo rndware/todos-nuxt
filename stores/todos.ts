@@ -6,15 +6,18 @@ export const useTodosStore = defineStore("todos", {
   state: () => ({
     todos: [] as TodoItemData[],
     loading: false,
+    error: null as string | null,
   }),
   actions: {
     async fetchTodos() {
-      this.loading = true;
-
-      const { todos } = await $fetch("/api/data");
-      this.todos = todos;
-
-      this.loading = false;
+      try {
+        const { todos } = await $fetch("/api/data");
+        this.todos = todos;
+      } catch (error: any) {
+        this.error = error.message || "Failed to fetch todos.";
+      } finally {
+        this.loading = false;
+      }
     },
     createTodo(text: string) {
       this.todos.push({
@@ -34,14 +37,19 @@ export const useTodosStore = defineStore("todos", {
       const item = this.todos.find((item) => item.id === id);
       if (!item) return;
 
-      if (actionType === TodoAction.Edit) {
-        item.text = text || "";
-      } else if (actionType === TodoAction.Star) {
-        item.starred = !item.starred;
-      } else if (actionType === TodoAction.Delete) {
-        this.todos = this.todos.filter((item) => item.id !== id);
-      } else if (actionType === TodoAction.Archive) {
-        item.archived = !item.archived;
+      switch (actionType) {
+        case TodoAction.Edit:
+          item.text = text || "";
+          break;
+        case TodoAction.Star:
+          item.starred = !item.starred;
+          break;
+        case TodoAction.Delete:
+          this.todos = this.todos.filter((item) => item.id !== id);
+          break;
+        case TodoAction.Archive:
+          item.archived = !item.archived;
+          break;
       }
     },
   },

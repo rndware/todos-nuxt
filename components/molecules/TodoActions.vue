@@ -31,12 +31,12 @@ const toggleActionPanel = () => {
       v-show="showActionPanel"
     >
       <IconButton
-        class="action-button"
+        class="action-button trash"
         iconName="trash"
         @click="todoActionClick(TodoAction.Delete)"
       />
       <button
-        class="action-button"
+        class="action-button archive"
         @click="todoActionClick(TodoAction.Archive)"
       >
         Archive
@@ -59,6 +59,10 @@ const toggleActionPanel = () => {
 
     button {
       margin-left: 0.75rem;
+
+      &.trash:hover {
+        color: $red;
+      }
     }
   }
 }

@@ -44,7 +44,7 @@ const handleDeleteSelected = () => {
       :disabled="selectedTodos.length === 0"
       @click="handleDeleteSelected"
     >
-      Delete Selected
+      Delete Selected ({{ selectedTodos.length }})
     </button>
     <TodoInfo
       v-show="totalCount > 0"

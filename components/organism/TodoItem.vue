@@ -27,7 +27,7 @@ const doneClick = () => {
   emit("todoActionClick", TodoAction.Edit, id.value, textModel.value);
 };
 
-const todoSelectedClick = () => {
+const todoSelectClick = () => {
   emit("todoSelectClick", props.todoData.id);
 };
 </script>
@@ -46,7 +46,7 @@ const todoSelectedClick = () => {
         :starred="starred"
         @toggled="todoActionClick(TodoAction.Star)"
       />
-      <input type="checkbox" @click="todoSelectedClick" />
+      <input type="checkbox" @click="todoSelectClick" />
     </div>
   </div>
 </template>

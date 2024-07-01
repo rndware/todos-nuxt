@@ -16,7 +16,7 @@ const submit = (e: Event) => {
 </script>
 
 <template>
-  <div class="todo-create">
+  <section class="todo-create">
     <form class="todo-create__form" @submit="submit">
       <label for="todo-create">✏️</label>
       <input
@@ -25,9 +25,10 @@ const submit = (e: Event) => {
         v-model="model"
         aria-label="Create a new todo item"
         placeholder=" I need to..."
+        required
       />
     </form>
-  </div>
+  </section>
 </template>
 
 <style scoped lang="scss">

@@ -42,7 +42,7 @@ const props = defineProps<{
     color: $yellow;
   }
   &__archived-count {
-    color: $red;
+    color: $pink;
   }
   &__total-count {
     color: $green;
