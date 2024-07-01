@@ -58,6 +58,10 @@ const handleDeleteSelected = () => {
 </template>
 
 <style scoped lang="scss">
+.delete-button:hover {
+  color: $red;
+}
+
 .todo-list-app__group-actions {
   display: inline-flex;
   flex-wrap: wrap;
