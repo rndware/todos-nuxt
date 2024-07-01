@@ -72,6 +72,12 @@ input:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
 
+input[type="checkbox"] {
+  display: grid;
+  grid-template-columns: 0.75em auto;
+  gap: 0.5em;
+}
+
 .card {
   padding: 2em;
 }

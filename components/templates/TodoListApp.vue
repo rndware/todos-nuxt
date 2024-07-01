@@ -1,16 +1,23 @@
 <script setup lang="ts">
 import { storeToRefs } from "pinia";
 import { useTodosStore } from "@/stores/todos";
+import useSelectTodos from "@/composables/useSelectTodos";
 import { TodoCreate, TodoInfo } from "@/components/molecules";
 import { TodoList } from "@/components/organism";
 
 const store = useTodosStore();
-const { deleteAll, handleAction, createTodo } = store;
+const { deleteAll, handleAction, createTodo, deleteSelected } = store;
 
 // primitives are not reactive in pinia by default, only objects are
 const { loading, starredCount, archivedCount, totalCount, todos } =
   storeToRefs(store);
 
+const { selectedTodos, handleSelected } = useSelectTodos();
+
+const handleDeleteSelected = () => {
+  deleteSelected(selectedTodos.value);
+  selectedTodos.value = [];
+};
 </script>
 
 <template>
@@ -21,6 +28,7 @@ const { loading, starredCount, archivedCount, totalCount, todos } =
       :todo-data="todos"
       :loading="loading"
       @todoActionClick="handleAction"
+      @todoSelectClick="handleSelected"
     />
     <button
       v-show="!loading"
@@ -29,6 +37,14 @@ const { loading, starredCount, archivedCount, totalCount, todos } =
       @click="deleteAll"
     >
       Delete All
+    </button>
+    <button
+      v-show="!loading"
+      class="delete-selected-button"
+      :disabled="selectedTodos.length === 0"
+      @click="handleDeleteSelected"
+    >
+      Delete Selected
     </button>
     <TodoInfo
       v-show="totalCount > 0"

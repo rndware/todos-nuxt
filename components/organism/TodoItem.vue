@@ -16,6 +16,7 @@ const { id, starred } = toRefs(props.todoData);
 
 const emit = defineEmits<{
   todoActionClick: [actionType: TodoAction, id: string, text?: string];
+  todoSelectClick: [id: string];
 }>();
 
 const todoActionClick = (actionType: TodoAction) => {
@@ -24,6 +25,10 @@ const todoActionClick = (actionType: TodoAction) => {
 
 const doneClick = () => {
   emit("todoActionClick", TodoAction.Edit, id.value, textModel.value);
+};
+
+const todoSelectedClick = () => {
+  emit("todoSelectClick", props.todoData.id);
 };
 </script>
 
@@ -41,6 +46,7 @@ const doneClick = () => {
         :starred="starred"
         @toggled="todoActionClick(TodoAction.Star)"
       />
+      <input type="checkbox" @click="todoSelectedClick" />
     </div>
   </div>
 </template>
@@ -87,6 +93,11 @@ const doneClick = () => {
 
   .highlighted {
     animation: flash 1s forwards;
+  }
+
+  input[type="checkbox"] {
+    margin: 0 0.75rem;
+    cursor: pointer;
   }
 }
 </style>

@@ -2,7 +2,7 @@
 import { setActivePinia, createPinia } from "pinia";
 import { describe, it, expect, beforeEach, vi } from "vitest";
 
-import { useTodosStore } from "@/stores";
+import { useTodosStore } from "@/stores/todos";
 import { TodoAction } from "@/enums";
 
 describe("useTodosStore", () => {
@@ -52,6 +52,27 @@ describe("useTodosStore", () => {
     store.deleteAll();
 
     expect(store.todos.length).toBe(0);
+  });
+
+  it("deletes selected todos", () => {
+    const store = useTodosStore();
+    store.createTodo("Todo 1");
+    store.createTodo("Todo 2");
+    store.createTodo("Todo 3");
+ 
+    const leftOverId = store.todos[1].id;
+
+    const idsToDelete = [store.todos[0].id, store.todos[2].id];
+    store.deleteSelected(idsToDelete);
+
+    // Check if the correct todos were deleted
+    expect(store.todos.length).toBe(1);
+    expect(store.todos.map((todo) => todo.id)).toEqual([leftOverId]);
+
+    // Check that deleted todos are not in the array anymore
+    idsToDelete.forEach((id) => {
+      expect(store.todos.some((todo) => todo.id === id)).toBe(false);
+    });
   });
 
   it("handles edit action", () => {

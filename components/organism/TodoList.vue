@@ -13,6 +13,7 @@ const props = defineProps<{
 
 const emit = defineEmits<{
   todoActionClick: [actionType: TodoAction, id: string, text?: string];
+  todoSelectClick: [id: string];
 }>();
 
 const showPlaceholder = computed(
@@ -23,6 +24,7 @@ const showPlaceholder = computed(
 const { isHighlighted } = useHighlightNewTodo(props);
 
 const todoActionClick = parentEmit(emit, "todoActionClick");
+const todoSelectClick = parentEmit(emit, "todoSelectClick");
 </script>
 
 <template>
@@ -33,6 +35,7 @@ const todoActionClick = parentEmit(emit, "todoActionClick");
       :todoData="item"
       :highlighted="isHighlighted(index)"
       @todoActionClick="todoActionClick"
+      @todoSelectClick="todoSelectClick"
       :key="`todo-item-${index}_${item.id}`"
     />
     <div class="todo-list__status">
