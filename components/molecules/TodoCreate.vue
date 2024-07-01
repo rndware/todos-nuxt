@@ -33,7 +33,7 @@ const submit = (e: Event) => {
 
 <style scoped lang="scss">
 label {
-  margin-right: 0.5rem;
+  margin-right: 0.75rem;
 }
 .todo-create {
   padding: 2rem 0;

@@ -30,22 +30,24 @@ const handleDeleteSelected = () => {
       @todoActionClick="handleAction"
       @todoSelectClick="handleSelected"
     />
-    <button
-      v-show="!loading"
-      class="delete-button"
-      :disabled="totalCount === 0"
-      @click="deleteAll"
-    >
-      Delete All
-    </button>
-    <button
-      v-show="!loading"
-      class="delete-selected-button"
-      :disabled="selectedTodos.length === 0"
-      @click="handleDeleteSelected"
-    >
-      Delete Selected ({{ selectedTodos.length }})
-    </button>
+    <div class="todo-list-app__group-actions">
+      <button
+        v-show="!loading"
+        class="delete-button"
+        :disabled="totalCount === 0"
+        @click="deleteAll"
+      >
+        Delete All
+      </button>
+      <button
+        v-show="!loading"
+        class="delete-selected-button"
+        :disabled="selectedTodos.length === 0"
+        @click="handleDeleteSelected"
+      >
+        Delete Selected ({{ selectedTodos.length }})
+      </button>
+    </div>
     <TodoInfo
       v-show="totalCount > 0"
       :starredCount="starredCount"
@@ -55,8 +57,12 @@ const handleDeleteSelected = () => {
   </div>
 </template>
 
-<style scoped>
-.delete-button {
-  margin: 2rem;
+<style scoped lang="scss">
+.todo-list-app__group-actions {
+  display: inline-flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin: 2rem 0;
+  gap: 0.75rem;
 }
 </style>
