@@ -1,4 +1,5 @@
 import { ref } from "vue";
+import type { TodoId } from "~/enums";
 
 /**
  * Custom composable function for managing selected todos.
@@ -6,20 +7,25 @@ import { ref } from "vue";
  *
  */
 export default function useSelectTodos() {
-  const selectedTodos = ref<string[]>([]);
+  const selectedTodos = ref<TodoId[]>([]);
 
-  const handleSelected = (id: string) => {
-    const item = selectedTodos.value.find((itemId) => itemId === id);
+  const handleSelected = (selectedId: TodoId) => {
+    const item = selectedTodos.value.find((id) => id === selectedId);
 
     if (!item) {
-      selectedTodos.value.push(id);
+      selectedTodos.value.push(selectedId);
     } else {
-      selectedTodos.value.splice(selectedTodos.value.indexOf(id), 1);
+      selectedTodos.value.splice(selectedTodos.value.indexOf(selectedId), 1);
     }
+  };
+
+  const clearSelected = () => {
+    selectedTodos.value = [];
   };
 
   return {
     selectedTodos,
     handleSelected,
+    clearSelected,
   };
 }

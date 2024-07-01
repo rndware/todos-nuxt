@@ -12,11 +12,11 @@ const { deleteAll, handleAction, createTodo, deleteSelected } = store;
 const { loading, starredCount, archivedCount, totalCount, todos } =
   storeToRefs(store);
 
-const { selectedTodos, handleSelected } = useSelectTodos();
+const { selectedTodos, handleSelected, clearSelected } = useSelectTodos();
 
 const handleDeleteSelected = () => {
   deleteSelected(selectedTodos.value);
-  selectedTodos.value = [];
+  clearSelected();
 };
 </script>
 

@@ -7,7 +7,9 @@ export enum TodoAction {
 
 export interface TodoItemData {
   text: string;
-  id: string;
+  id: TodoId;
   starred: boolean;
   archived: boolean;
 }
+
+export type TodoId = string;

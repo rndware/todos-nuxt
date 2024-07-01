@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { ref, toRefs } from "vue";
-import { TodoAction, type TodoItemData } from "@/enums";
+import { TodoAction, type TodoId, type TodoItemData } from "@/enums";
 
 import { TodoActions, ToggleStar, EditableText } from "@/components/molecules";
 
@@ -15,8 +15,8 @@ const textModel = ref<string>(props.todoData.text);
 const { id, starred } = toRefs(props.todoData);
 
 const emit = defineEmits<{
-  todoActionClick: [actionType: TodoAction, id: string, text?: string];
-  todoSelectClick: [id: string];
+  todoActionClick: [actionType: TodoAction, id: TodoId, text?: string];
+  todoSelectClick: [id: TodoId];
 }>();
 
 const todoActionClick = (actionType: TodoAction) => {

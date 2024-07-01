@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { computed } from "vue";
-import { TodoAction, type TodoItemData } from "@/enums";
+import { TodoAction, type TodoId, type TodoItemData } from "@/enums";
 import useHighlightNewTodo from "@/composables/useHighlightNewTodo";
 import { parentEmit } from "@/utils/parentEmit";
 
@@ -12,8 +12,8 @@ const props = defineProps<{
 }>();
 
 const emit = defineEmits<{
-  todoActionClick: [actionType: TodoAction, id: string, text?: string];
-  todoSelectClick: [id: string];
+  todoActionClick: [actionType: TodoAction, id: TodoId, text?: string];
+  todoSelectClick: [id: TodoId];
 }>();
 
 const showPlaceholder = computed(
