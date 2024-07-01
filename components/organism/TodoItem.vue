@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { defineEmits, ref, toRefs } from "vue";
+import { ref, toRefs } from "vue";
 import { TodoAction, type TodoItemData } from "@/enums";
 
 import { TodoActions, ToggleStar, EditableText } from "@/components/molecules";

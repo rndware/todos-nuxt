@@ -1,50 +1,16 @@
 <script setup lang="ts">
-import { onMounted } from "vue";
-import { storeToRefs } from "pinia";
 import { useTodosStore } from "@/stores/todos";
-import { TodoCreate, TodoInfo } from "@/components/molecules";
-import { TodoList } from "@/components/organism";
 
 const store = useTodosStore();
-const { deleteAll, handleAction, fetchTodos, createTodo } = store;
+const { todos: rawTodos } = await $fetch("/api/data");
 
-// primitives are not reactive in pinia by default, only objects are
-const { loading, starredCount, archivedCount, totalCount, todos } =
-  storeToRefs(store);
-
-onMounted(async () => {
-  await fetchTodos();
+store.$patch({
+  todos: rawTodos,
 });
 </script>
 
 <template>
   <div class="todo-list-page">
-    <h1>Todos️ 📒</h1>
-    <TodoCreate @create="createTodo" />
-    <TodoList
-      :todo-data="todos"
-      :loading="loading"
-      @todoActionClick="handleAction"
-    />
-    <button
-      v-show="!loading"
-      class="delete-button"
-      :disabled="totalCount === 0"
-      @click="deleteAll"
-    >
-      Delete All
-    </button>
-    <TodoInfo
-      v-show="totalCount > 0"
-      :starredCount="starredCount"
-      :archivedCount="archivedCount"
-      :totalCount="totalCount"
-    />
+    <TemplatesTodoListApp />
   </div>
 </template>
-
-<style scoped>
-.delete-button {
-  margin: 2rem;
-}
-</style>
