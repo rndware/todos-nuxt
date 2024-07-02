@@ -4,9 +4,10 @@ import { useTodosStore } from "@/stores/todos";
 import useSelectTodos from "@/composables/useSelectTodos";
 import { TodoCreate, TodoInfo, TodoGroupActions } from "@/components/molecules";
 import { TodoList } from "@/components/organism";
+import { TodoGroupAction } from "~/enums";
 
 const store = useTodosStore();
-const { deleteAll, handleAction, createTodo, deleteSelected } = store;
+const { handleGroupAction, handleAction, createTodo } = store;
 
 // primitives are not reactive in pinia by default, only objects are
 const { loading, starredCount, archivedCount, totalCount, todos } =
@@ -15,13 +16,13 @@ const { loading, starredCount, archivedCount, totalCount, todos } =
 const { selectedTodos, handleSelected, clearSelected } = useSelectTodos();
 
 const handleDeleteSelected = () => {
-  deleteSelected(selectedTodos.value);
+  handleGroupAction(TodoGroupAction.DeleteRange, selectedTodos.value);
   clearSelected();
 };
 
 const handleDeleteAll = () => {
+  handleGroupAction(TodoGroupAction.DeleteAll);
   clearSelected();
-  deleteAll();
 };
 </script>
 

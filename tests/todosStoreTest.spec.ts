@@ -3,7 +3,7 @@ import { setActivePinia, createPinia } from "pinia";
 import { describe, it, expect, beforeEach } from "vitest";
 
 import { useTodosStore } from "@/stores/todos";
-import { TodoAction } from "@/enums";
+import { TodoAction, TodoGroupAction } from "@/enums";
 
 describe("useTodosStore", () => {
   beforeEach(() => {
@@ -32,7 +32,7 @@ describe("useTodosStore", () => {
   it("deletes all todos", () => {
     const store = useTodosStore();
     store.createTodo("New Todo");
-    store.deleteAll();
+    store.handleGroupAction(TodoGroupAction.DeleteAll);
 
     expect(store.todos.length).toBe(0);
   });
@@ -46,7 +46,7 @@ describe("useTodosStore", () => {
     const leftOverId = store.todos[1].id;
 
     const idsToDelete = [store.todos[0].id, store.todos[2].id];
-    store.deleteSelected(idsToDelete);
+    store.handleGroupAction(TodoGroupAction.DeleteRange, idsToDelete);
 
     // Check if the correct todos were deleted
     expect(store.todos.length).toBe(1);

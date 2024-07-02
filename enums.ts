@@ -5,6 +5,11 @@ export enum TodoAction {
   Archive
 }
 
+export enum TodoGroupAction {
+  DeleteAll,
+  DeleteRange,
+}
+
 export interface TodoItemData {
   text: string;
   id: TodoId;

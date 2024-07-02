@@ -1,6 +1,11 @@
 import { defineStore } from "pinia";
 import { v4 as uuid } from "uuid";
-import { type TodoItemData, TodoAction, type TodoId } from "../enums";
+import {
+  type TodoItemData,
+  TodoAction,
+  type TodoId,
+  TodoGroupAction,
+} from "../enums";
 
 export const useTodosStore = defineStore("todos", {
   state: () => ({
@@ -17,11 +22,15 @@ export const useTodosStore = defineStore("todos", {
         archived: false,
       });
     },
-    deleteAll() {
-      this.todos = [];
-    },
-    deleteSelected(selectedIds: TodoId[]) {
-      this.todos = this.todos.filter(({ id }) => !selectedIds.includes(id));
+    handleGroupAction(actionType: TodoGroupAction, selectedIds?: TodoId[]) {
+      switch (actionType) {
+        case TodoGroupAction.DeleteRange:
+          this.todos = this.todos.filter(({ id }) => !selectedIds?.includes(id));
+          break;
+        case TodoGroupAction.DeleteAll:
+          this.todos = [];
+          break;
+      }
     },
     handleAction(actionType: TodoAction, id: TodoId, text?: string) {
       const item = this.todos.find((item) => item.id === id);
