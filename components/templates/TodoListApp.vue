@@ -2,7 +2,7 @@
 import { storeToRefs } from "pinia";
 import { useTodosStore } from "@/stores/todos";
 import useSelectTodos from "@/composables/useSelectTodos";
-import { TodoCreate, TodoInfo } from "@/components/molecules";
+import { TodoCreate, TodoInfo, TodoGroupActions } from "@/components/molecules";
 import { TodoList } from "@/components/organism";
 
 const store = useTodosStore();
@@ -18,6 +18,11 @@ const handleDeleteSelected = () => {
   deleteSelected(selectedTodos.value);
   clearSelected();
 };
+
+const handleDeleteAll = () => {
+  clearSelected();
+  deleteAll();
+}
 </script>
 
 <template>
@@ -30,24 +35,13 @@ const handleDeleteSelected = () => {
       @todoActionClick="handleAction"
       @todoSelectClick="handleSelected"
     />
-    <div class="todo-list-app__group-actions">
-      <button
-        v-show="!loading"
-        class="delete-button"
-        :disabled="totalCount === 0"
-        @click="deleteAll"
-      >
-        Delete All
-      </button>
-      <button
-        v-show="!loading"
-        class="delete-selected-button"
-        :disabled="selectedTodos.length === 0"
-        @click="handleDeleteSelected"
-      >
-        Delete Selected ({{ selectedTodos.length }})
-      </button>
-    </div>
+    <TodoGroupActions
+      :loading="loading"
+      :selectedTodosLength="selectedTodos.length"
+      :allTodosLength="totalCount"
+      @deleteSelectedClick="handleDeleteSelected"
+      @deleteAllClick="handleDeleteAll"
+    />
     <TodoInfo
       v-show="totalCount > 0"
       :starredCount="starredCount"
@@ -56,17 +50,3 @@ const handleDeleteSelected = () => {
     />
   </div>
 </template>
-
-<style scoped lang="scss">
-.delete-button:hover {
-  color: $red;
-}
-
-.todo-list-app__group-actions {
-  display: inline-flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  margin: 2rem 0;
-  gap: 0.75rem;
-}
-</style>
