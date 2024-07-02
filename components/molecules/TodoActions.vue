@@ -9,10 +9,6 @@ const emit = defineEmits<{
 
 const showActionPanel = ref<boolean>(false);
 
-const todoActionClick = (actionType: TodoAction) => {
-  emit("todoActionClick", actionType);
-};
-
 const toggleActionPanel = () => {
   showActionPanel.value = !showActionPanel.value;
 };
@@ -33,11 +29,11 @@ const toggleActionPanel = () => {
       <IconButton
         class="action-button trash"
         iconName="trash"
-        @click="todoActionClick(TodoAction.Delete)"
+        @click="emit('todoActionClick', TodoAction.Delete)"
       />
       <button
         class="action-button archive"
-        @click="todoActionClick(TodoAction.Archive)"
+        @click="emit('todoActionClick', TodoAction.Archive)"
       >
         Archive
       </button>
