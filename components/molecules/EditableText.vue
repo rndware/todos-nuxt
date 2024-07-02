@@ -65,7 +65,7 @@ const pencilClasses = computed(() => ({
     text-align: start;
     padding-right: 0.75rem;
     display: -webkit-box;
-    -webkit-line-clamp: 3;
+    -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
     overflow: hidden;
     text-overflow: ellipsis;
