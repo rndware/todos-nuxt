@@ -16,7 +16,7 @@ const submit = (e: Event) => {
 </script>
 
 <template>
-  <section class="todo-create">
+  <div class="todo-create">
     <form class="todo-create__form" @submit="submit">
       <label for="todo-create">✏️</label>
       <input
@@ -28,14 +28,15 @@ const submit = (e: Event) => {
         required
       />
     </form>
-  </section>
+  </div>
 </template>
 
 <style scoped lang="scss">
-label {
-  margin-right: 0.75rem;
-}
 .todo-create {
   padding: 2rem 0;
+
+  label {
+    margin-right: 0.75rem;
+  }
 }
 </style>

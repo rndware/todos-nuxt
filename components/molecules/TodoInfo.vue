@@ -7,7 +7,7 @@ const props = defineProps<{
 </script>
 
 <template>
-  <div class="todo-info">
+  <section class="todo-info">
     <div>
       Starred:
       <span class="todo-info__starred-count">{{ props.starredCount }}</span>
@@ -19,7 +19,7 @@ const props = defineProps<{
     <div>
       Count: <span class="todo-info__total-count">{{ props.totalCount }}</span>
     </div>
-  </div>
+  </section>
 </template>
 
 <style scoped lang="scss">
