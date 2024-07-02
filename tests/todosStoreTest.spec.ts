@@ -1,6 +1,6 @@
 // useTodosStore.test.ts
 import { setActivePinia, createPinia } from "pinia";
-import { describe, it, expect, beforeEach, vi } from "vitest";
+import { describe, it, expect, beforeEach } from "vitest";
 
 import { useTodosStore } from "@/stores/todos";
 import { TodoAction } from "@/enums";
@@ -14,23 +14,6 @@ describe("useTodosStore", () => {
     const store = useTodosStore();
     expect(store.todos).toEqual([]);
     expect(store.loading).toBe(false);
-  });
-
-  it("fetches todos from the API", async () => {
-    const mockTodos = [
-      { id: "1", text: "Todo 1", starred: false, archived: false },
-      { id: "2", text: "Todo 2", starred: true, archived: false },
-    ];
-
-    (global as any).$fetch = vi
-      .fn()
-      .mockResolvedValueOnce(Promise.resolve({ todos: mockTodos }));
-
-    const store = useTodosStore();
-    await store.fetchTodos();
-
-    expect(store.loading).toBe(false);
-    expect(store.todos).toEqual(mockTodos);
   });
 
   it("creates a new todo", () => {

@@ -14,9 +14,3 @@ const classList = computed(() => ({
 <template>
   <button :class="classList" />
 </template>
-
-<style scoped lang="scss">
-button { 
-  min-width: $min-button-width;
-}
-</style>

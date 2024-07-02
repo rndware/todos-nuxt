@@ -9,16 +9,6 @@ export const useTodosStore = defineStore("todos", {
     error: null as string | null,
   }),
   actions: {
-    async fetchTodos() {
-      try {
-        const { todos } = await $fetch("/api/data");
-        this.todos = todos;
-      } catch (error: any) {
-        this.error = error.message || "Failed to fetch todos.";
-      } finally {
-        this.loading = false;
-      }
-    },
     createTodo(text: string) {
       this.todos.push({
         id: uuid(),

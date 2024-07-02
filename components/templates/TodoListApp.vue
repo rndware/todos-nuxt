@@ -22,7 +22,7 @@ const handleDeleteSelected = () => {
 const handleDeleteAll = () => {
   clearSelected();
   deleteAll();
-}
+};
 </script>
 
 <template>
