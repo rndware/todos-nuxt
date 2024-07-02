@@ -64,6 +64,11 @@ const pencilClasses = computed(() => ({
   &__text {
     text-align: start;
     padding-right: 0.75rem;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 
   &__input {
