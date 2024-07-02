@@ -4,7 +4,7 @@ import { useTodosStore } from "@/stores/todos";
 import useSelectTodos from "@/composables/useSelectTodos";
 import { TodoCreate, TodoInfo, TodoGroupActions } from "@/components/molecules";
 import { TodoList } from "@/components/organism";
-import { TodoGroupAction } from "~/enums";
+import { TodoGroupAction } from "@/enums";
 
 const store = useTodosStore();
 const { handleGroupAction, handleAction, createTodo } = store;
@@ -31,7 +31,7 @@ const handleDeleteAll = () => {
     <h1>Todos️ 📒</h1>
     <TodoCreate @create="createTodo" />
     <TodoList
-      :todo-data="todos"
+      :todoData="todos"
       :loading="loading"
       @todoActionClick="handleAction"
       @todoSelectClick="handleSelected"
