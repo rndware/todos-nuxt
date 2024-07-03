@@ -23,8 +23,8 @@ const showPlaceholder = computed(
 // pass all props or breaks reactivity
 const { isHighlighted } = useHighlightNewTodo(props);
 
-const todoActionClick = parentEmit(emit, "todoActionClick");
-const todoSelectClick = parentEmit(emit, "todoSelectClick");
+const onTodoActionClick = parentEmit(emit, "todoActionClick");
+const onTodoSelectClick = parentEmit(emit, "todoSelectClick");
 </script>
 
 <template>
@@ -34,8 +34,8 @@ const todoSelectClick = parentEmit(emit, "todoSelectClick");
       v-show="!item.archived"
       :todoData="item"
       :highlighted="isHighlighted(index)"
-      @todoActionClick="todoActionClick"
-      @todoSelectClick="todoSelectClick"
+      @todoActionClick="onTodoActionClick"
+      @todoSelectClick="onTodoSelectClick"
       :key="`todo-item-${index}_${item.id}`"
     />
     <div class="todo-list__status">

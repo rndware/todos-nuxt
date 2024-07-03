@@ -10,7 +10,7 @@ const emit = defineEmits<{
 
 const showActionPanel = ref<boolean>(false);
 
-const toggleActionPanel = () => {
+const onToggleActionPanel = () => {
   showActionPanel.value = !showActionPanel.value;
 
   emit('actionPanelToggle', showActionPanel.value);
@@ -22,7 +22,7 @@ const toggleActionPanel = () => {
     <IconButton
       class="todo-actions__toggle"
       iconName="ellipsis-v"
-      @click="toggleActionPanel"
+      @click="onToggleActionPanel"
     />
     <div
       class="todo-actions__panel"

@@ -6,14 +6,14 @@ const props = defineProps<{
   starred: boolean;
 }>();
 
-const emit = defineEmits(["toggled"]);
+const emit = defineEmits(["toggle"]);
 
 const iconName = computed(() => (props.starred ? "star-fill" : "star"));
 </script>
 
 <template>
   <div class="toggle-star">
-    <IconButton :iconName="iconName" @click="emit('toggled')" />
+    <IconButton :iconName="iconName" @click="emit('toggle')" />
   </div>
 </template>
 

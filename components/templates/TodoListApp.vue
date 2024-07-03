@@ -15,12 +15,12 @@ const { loading, starredCount, archivedCount, totalCount, todos } =
 
 const { selectedTodos, handleSelected, clearSelected } = useSelectTodos();
 
-const handleDeleteSelected = () => {
+const onHandleDeleteSelected = () => {
   handleGroupAction(TodoGroupAction.DeleteRange, selectedTodos.value);
   clearSelected();
 };
 
-const handleDeleteAll = () => {
+const onHandleDeleteAll = () => {
   handleGroupAction(TodoGroupAction.DeleteAll);
   clearSelected();
 };
@@ -40,8 +40,8 @@ const handleDeleteAll = () => {
       :loading="loading"
       :selectedTodosLength="selectedTodos.length"
       :allTodosLength="totalCount"
-      @deleteSelectedClick="handleDeleteSelected"
-      @deleteAllClick="handleDeleteAll"
+      @deleteSelectedClick="onHandleDeleteSelected"
+      @deleteAllClick="onHandleDeleteAll"
     />
     <TodoInfo
       v-show="totalCount > 0"

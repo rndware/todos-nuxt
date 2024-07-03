@@ -4,9 +4,7 @@ const model = ref<string>("");
 
 const emit = defineEmits(["create"]);
 
-const submit = (e: Event) => {
-  e.preventDefault();
-
+const onSubmit = () => {
   if (model.value !== "") {
     emit("create", model.value);
   }
@@ -17,7 +15,7 @@ const submit = (e: Event) => {
 
 <template>
   <div class="todo-create">
-    <form class="todo-create__form" @submit="submit">
+    <form class="todo-create__form" @submit.prevent="onSubmit">
       <label for="todo-create">✏️</label>
       <input
         type="text"

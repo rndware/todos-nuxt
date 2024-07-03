@@ -10,13 +10,13 @@ describe("TodoItem.vue", () => {
     starred: false,
   } as TodoItemData;
 
-  it("emits doneClick event with correct payload when EditableText is edited", async () => {
+  it("emits doneClick event with correct payload when EditableText is edit", async () => {
     const wrapper = mount(TodoItem, {
       props: { todoData },
     });
 
     const editableText = wrapper.findComponent({ name: "EditableText" });
-    await editableText.vm.$emit("edited");
+    await editableText.vm.$emit("edit");
 
     expect(wrapper.emitted("todoActionClick")).toBeTruthy();
     expect(wrapper.emitted("todoActionClick")![0]).toEqual([

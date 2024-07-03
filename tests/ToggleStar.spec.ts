@@ -27,7 +27,7 @@ describe("ToggleStar", () => {
     );
   });
 
-  it('emits "toggled" event when star icon is clicked', async () => {
+  it('emits "toggle" event when star icon is clicked', async () => {
     const wrapper = mount(ToggleStar, {
       props: {
         starred: false,
@@ -38,6 +38,6 @@ describe("ToggleStar", () => {
     await wrapper.findComponent(IconButton).trigger("click");
 
     // Check if "toggled" event was emitted
-    expect(wrapper.emitted("toggled")).toBeTruthy();
+    expect(wrapper.emitted("toggle")).toBeTruthy();
   });
 });

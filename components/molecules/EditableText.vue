@@ -4,17 +4,17 @@ import { IconButton } from "@/components/atoms";
 
 const model = defineModel();
 
-const emit = defineEmits(["edited"]);
+const emit = defineEmits(["edit"]);
 
 const editing = ref<boolean>(false);
 const hovering = ref<boolean>(false);
 
-const doneEditing = () => {
+const onDoneEditing = () => {
   editing.value = false;
-  emit("edited");
+  emit("edit");
 };
 
-const toggleEdit = () => {
+const onToggleEdit = () => {
   editing.value = true;
 };
 
@@ -38,20 +38,20 @@ const pencilClasses = computed(() => ({
       class="editable-text__input"
       type="text"
       v-model="model"
-      @keyup.enter="doneEditing"
+      @keyup.enter="onDoneEditing"
     />
     <IconButton
       v-if="!editing"
       v-show="!(editing && hovering)"
       iconName="pencil"
       :class="pencilClasses"
-      @click="toggleEdit"
+      @click="onToggleEdit"
     />
     <IconButton
       class="editable-text__done"
       iconName="check"
       v-show="editing"
-      @click="doneEditing"
+      @click="onDoneEditing"
     />
   </div>
 </template>

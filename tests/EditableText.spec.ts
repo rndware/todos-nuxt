@@ -27,7 +27,7 @@ describe("EditableText", () => {
     // TO-DO: refactor to check enter keypress and done button click
   });
 
-  it('emits "edited" event when done editing', async () => {
+  it('emits "edit" event when done editing', async () => {
     const wrapper = mount(EditableText);
 
     // Simulate clicking on pencil icon to edit
@@ -36,7 +36,7 @@ describe("EditableText", () => {
     // Simulate clicking on check icon to finish editing
     await wrapper.find(".editable-text__done").trigger("click");
 
-    // Check if "edited" event was emitted
-    expect(wrapper.emitted("edited")).toBeTruthy();
+    // Check if "edit" event was emitted
+    expect(wrapper.emitted("edit")).toBeTruthy();
   });
 });
