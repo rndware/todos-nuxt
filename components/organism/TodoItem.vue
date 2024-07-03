@@ -10,6 +10,7 @@ const props = defineProps<{
 }>();
 
 const textModel = ref<string>(props.todoData.text);
+const showQuickControls = ref<boolean>(true);
 
 // note: without toRefs deconstruction breaks reactivity
 const { id, starred } = toRefs(props.todoData);
@@ -30,6 +31,10 @@ const doneClick = () => {
 const todoSelectClick = () => {
   emit("todoSelectClick", props.todoData.id);
 };
+
+const actionPanelToggle = (showing: boolean) => {
+  showQuickControls.value = !showing;
+};
 </script>
 
 <template>
@@ -40,13 +45,18 @@ const todoSelectClick = () => {
       @edited="doneClick"
     />
     <div class="todo-item__controls">
-      <TodoActions @todoActionClick="todoActionClick" />
-      <ToggleStar
-        class="todo-item__toggle-star"
-        :starred="starred"
-        @toggled="todoActionClick(TodoAction.Star)"
+      <TodoActions
+        @todoActionClick="todoActionClick"
+        @actionPanelToggle="actionPanelToggle"
       />
-      <input type="checkbox" @click="todoSelectClick" />
+      <div class="quick-controls" v-show="showQuickControls">
+        <ToggleStar
+          class="quick-controls__toggle-star"
+          :starred="starred"
+          @toggled="todoActionClick(TodoAction.Star)"
+        />
+        <input type="checkbox" @click="todoSelectClick" />
+      </div>
     </div>
   </div>
 </template>
@@ -66,16 +76,20 @@ const todoSelectClick = () => {
     padding: 0.5rem 1rem 0.5rem 0;
   }
 
-  &__toggle-star {
-    display: flex;
-    align-items: center;
-  }
-
   &__controls {
     display: flex;
 
     & div {
       margin-left: 0.5rem;
+    }
+  }
+
+  .quick-controls {
+    display: flex;
+
+    &__toggle-star {
+      display: flex;
+      align-items: center;
     }
   }
 

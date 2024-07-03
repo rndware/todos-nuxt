@@ -5,12 +5,15 @@ import { IconButton } from "@/components/atoms";
 
 const emit = defineEmits<{
   todoActionClick: [actionType: TodoAction];
+  actionPanelToggle: [showing: boolean];
 }>();
 
 const showActionPanel = ref<boolean>(false);
 
 const toggleActionPanel = () => {
   showActionPanel.value = !showActionPanel.value;
+
+  emit('actionPanelToggle', showActionPanel.value);
 };
 </script>
 
