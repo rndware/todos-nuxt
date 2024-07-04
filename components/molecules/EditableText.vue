@@ -25,10 +25,11 @@ const pencilClasses = computed(() => ({
 </script>
 
 <template>
-  <div
+  <form
     class="editable-text"
     @mouseenter="hovering = true"
     @mouseleave="hovering = false"
+    @submit.prevent="onDoneEditing"
   >
     <div v-if="!editing" class="editable-text__text">
       {{ model }}
@@ -37,8 +38,8 @@ const pencilClasses = computed(() => ({
       v-else
       class="editable-text__input"
       type="text"
+      name="editable-todo-text"
       v-model="model"
-      @keyup.enter="onDoneEditing"
     />
     <IconButton
       v-if="!editing"
@@ -53,7 +54,7 @@ const pencilClasses = computed(() => ({
       v-show="editing"
       @click="onDoneEditing"
     />
-  </div>
+  </form>
 </template>
 
 <style scoped lang="scss">
