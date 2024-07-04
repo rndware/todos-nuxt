@@ -10,6 +10,10 @@ const editing = ref<boolean>(false);
 const hovering = ref<boolean>(false);
 
 const onDoneEditing = () => {
+  if (model.value === "") {
+    return;
+  }
+
   editing.value = false;
   emit("edit");
 };
@@ -40,6 +44,7 @@ const pencilClasses = computed(() => ({
       type="text"
       name="editable-todo-text"
       v-model="model"
+      required
     />
     <IconButton
       v-if="!editing"

@@ -39,4 +39,19 @@ describe("EditableText", () => {
     // Check if "edit" event was emitted
     expect(wrapper.emitted("edit")).toBeTruthy();
   });
+
+  it('does not emit "edit" event when input is empty', async () => {
+    const wrapper = mount(EditableText);
+
+    // Simulate clicking on pencil icon to edit
+    await wrapper.findComponent(IconButton).trigger("click");
+
+    await wrapper.find(".editable-text__input").setValue("");
+
+    // Simulate clicking on check icon to finish editing
+    await wrapper.find(".editable-text__done").trigger("click");
+
+    // Check if "edit" event was emitted
+    expect(wrapper.emitted("edit")).toBeFalsy();
+  });
 });
