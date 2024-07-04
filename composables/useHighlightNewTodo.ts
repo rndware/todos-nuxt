@@ -8,7 +8,7 @@ import { ref, watch } from "vue";
  * @returns An object with a function `isHighlighted(index)` to check if a todo at `index` is highlighted.
  */
 export default function useHighlightNewTodo<T>(props: { todoData: T[] }) {
-  const highlightedIndex = ref<number | null>(null);
+  const highlightedIndex = ref<number>(-1);
 
   watch(
     () => props.todoData.length,
