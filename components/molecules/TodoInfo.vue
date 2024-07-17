@@ -30,6 +30,7 @@ const props = defineProps<{
   border: 1px solid $gray;
   border-radius: $border-radius;
   padding: 1rem;
+  margin: 0 1.5rem;
   gap: 0.5rem;
 
   div {

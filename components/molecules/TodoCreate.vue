@@ -9,6 +9,7 @@ const onSubmit = () => {
     emit("create", model.value);
   }
 
+  // clear on submit
   model.value = "";
 };
 </script>
@@ -34,7 +35,7 @@ const onSubmit = () => {
   padding: 2rem 0;
 
   label {
-    margin-right: 0.75rem;
+    margin: 0rem 0.75rem;
   }
 }
 </style>
