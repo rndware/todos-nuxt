@@ -14,7 +14,7 @@ export default function useHighlightNewTodo<T>(props: { todoData: T[] }) {
     () => props.todoData.length,
     (nextLength, prevLength) => {
       // only highlight for single added items
-      if (nextLength > prevLength && nextLength - prevLength === 1) {
+      if (nextLength - prevLength === 1) {
         highlightedIndex.value = props.todoData.length - 1;
       }
     }
