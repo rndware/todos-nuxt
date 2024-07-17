@@ -57,7 +57,7 @@ const onTodoSelectClick = parentEmit(emit, "todoSelectClick");
 
 .todo-list__status {
   div {
-    padding: 1rem;
+    padding: $spacing-unit;
   }
 }
 </style>

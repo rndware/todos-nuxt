@@ -10,6 +10,7 @@ const editing = ref<boolean>(false);
 const hovering = ref<boolean>(false);
 
 const onDoneEditing = () => {
+  // Do not accept blank string as todo
   if (model.value === "") {
     return;
   }

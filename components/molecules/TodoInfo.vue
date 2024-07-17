@@ -29,7 +29,7 @@ const props = defineProps<{
   justify-content: space-around;
   border: 1px solid $gray;
   border-radius: $border-radius;
-  padding: 1rem;
+  padding: $spacing-unit;
   margin: 0 1.5rem;
   gap: 0.5rem;
 

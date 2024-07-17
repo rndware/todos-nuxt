@@ -32,7 +32,7 @@ const onSubmit = () => {
 
 <style scoped lang="scss">
 .todo-create {
-  padding: 2rem 0;
+  padding: $spacing-double 0;
 
   label {
     margin: 0rem 0.75rem;

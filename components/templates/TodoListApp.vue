@@ -54,6 +54,6 @@ const onHandleDeleteAll = () => {
 
 <style scoped lang="scss">
 .todo-list-app {
-  padding: 1rem;
+  padding: $spacing-unit;
 }
 </style>

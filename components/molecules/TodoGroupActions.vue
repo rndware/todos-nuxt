@@ -34,7 +34,7 @@ const emit = defineEmits(["deleteSelectedClick", "deleteAllClick"]);
   display: inline-flex;
   flex-wrap: wrap;
   justify-content: space-around;
-  margin: 2rem 0;
+  margin: $spacing-double 0;
   gap: 0.75rem;
 
   .delete-button:hover {

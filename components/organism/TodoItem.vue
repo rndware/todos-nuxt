@@ -63,7 +63,7 @@ const onActionPanelToggle = (showing: boolean) => {
 <style scoped lang="scss">
 .todo-item {
   display: flex;
-  padding: 1rem;
+  padding: $spacing-unit;
   align-items: center;
   justify-content: space-between;
 
