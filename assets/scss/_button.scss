@@ -1,0 +1,24 @@
+$button-color: #1a1a1a;
+$button-border-radius: 8px;
+$button-hover-color: #646cff;
+
+button {
+  cursor: pointer;
+  border-radius: $button-border-radius;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: $button-color;
+  transition: border-color 0.25s;
+
+  &:hover:not([disabled]) {
+    border-color: $button-hover-color;
+  }
+
+  &:focus,
+  &:focus-visible {
+    outline: 4px auto -webkit-focus-ring-color;
+  }
+}
