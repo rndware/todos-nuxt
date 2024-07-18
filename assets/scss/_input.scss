@@ -1,0 +1,23 @@
+input {
+  font-size: 1rem;
+  padding: 0.5rem;
+  border-radius: $border-radius;
+  border: 1px solid transparent;
+  transition: border-color $input-focus-timing;
+
+  &[type="checkbox"] {
+    display: grid;
+    grid-template-columns: 0.75em auto;
+    gap: 0.5em;
+  }
+
+  &:hover {
+    border-color: $hover-color;
+  }
+
+  &:focus,
+  &:focus-visible {
+    border-color: $hover-color;
+    outline: $focus-border-radius auto -webkit-focus-ring-color;
+  }
+}

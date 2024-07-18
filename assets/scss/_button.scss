@@ -1,6 +1,5 @@
 $button-color: #1a1a1a;
 $button-border-radius: 8px;
-$button-hover-color: #646cff;
 
 button {
   cursor: pointer;
@@ -11,14 +10,14 @@ button {
   font-weight: 500;
   font-family: inherit;
   background-color: $button-color;
-  transition: border-color 0.25s;
+  transition: border-color $input-focus-timing;
 
   &:hover:not([disabled]) {
-    border-color: $button-hover-color;
+    border-color: $hover-color;
   }
 
   &:focus,
   &:focus-visible {
-    outline: 4px auto -webkit-focus-ring-color;
+    outline: $focus-border-radius auto -webkit-focus-ring-color;
   }
 }

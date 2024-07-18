@@ -1,13 +1,22 @@
 // Colors
+$black: #242424; 
+$white: rgba(255, 255, 255, 0.87);
 $yellow: rgb(226, 197, 65);
 $red: rgb(237, 98, 98);
 $pink: rgb(203, 139, 208);
 $green: rgb(119, 216, 119);
 $gray: #3d3d3d;
 
+$hover-color: #646cff;
+
 // Spacing
 $spacing-unit: 1rem;
 $spacing-double: 2rem;
 
+// Size
 $border-radius: 10px;
+$focus-border-radius: 4px;
 $min-button-width: 34px;
+
+// Timing
+$input-focus-timing: 0.25s;
