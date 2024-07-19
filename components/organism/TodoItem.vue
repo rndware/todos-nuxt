@@ -11,7 +11,7 @@ const props = defineProps<{
 const textModel = ref<string>(props.todoData.text);
 const showQuickControls = ref<boolean>(true);
 
-// note: without toRefs deconstruction breaks reactivity
+// without toRefs deconstruction breaks reactivity
 const { id, starred } = toRefs(props.todoData);
 
 const emit = defineEmits<{
@@ -90,22 +90,6 @@ const onActionPanelToggle = (showing: boolean) => {
       display: flex;
       align-items: center;
     }
-  }
-
-  @keyframes flash {
-    0% {
-      color: inherit;
-    }
-    50% {
-      color: $green;
-    }
-    100% {
-      color: inherit;
-    }
-  }
-
-  .highlighted {
-    animation: flash 1s forwards;
   }
 
   input[type="checkbox"] {

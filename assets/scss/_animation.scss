@@ -1,0 +1,17 @@
+@keyframes flash {
+  0% {
+    color: inherit;
+  }
+
+  50% {
+    color: $green;
+  }
+
+  100% {
+    color: inherit;
+  }
+}
+
+.highlighted {
+  animation: flash 1s forwards;
+}
