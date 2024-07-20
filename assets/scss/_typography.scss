@@ -2,8 +2,8 @@ a {
   font-weight: 500;
   color: $color-light-blue;
   text-decoration: inherit;
-}
 
-a:hover {
-  color: $color-light-blue;
+  &:hover {
+    color: $color-light-blue;
+  }
 }

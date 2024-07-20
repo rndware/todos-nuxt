@@ -1,5 +1,5 @@
-$button-color: #1a1a1a;
-$button-border-radius: 8px;
+$button-color: $color-dark-black;
+$button-border-radius: $border-radius;
 
 button {
   cursor: pointer;
