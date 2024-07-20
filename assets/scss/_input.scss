@@ -3,7 +3,7 @@ input {
   padding: 0.5rem;
   border-radius: $border-radius;
   border: 1px solid transparent;
-  transition: border-color $input-focus-timing;
+  transition: border-color $timing-input-focus;
 
   &[type="checkbox"] {
     display: grid;
@@ -12,12 +12,11 @@ input {
   }
 
   &:hover {
-    border-color: $hover-color;
+    border: $border-hover-width solid $border-hover-color;
   }
 
   &:focus,
   &:focus-visible {
-    border-color: $hover-color;
-    outline: $focus-border-radius auto -webkit-focus-ring-color;
+    outline: $border-focus-width auto -webkit-focus-ring-color;
   }
 }

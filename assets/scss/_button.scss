@@ -3,21 +3,21 @@ $button-border-radius: 8px;
 
 button {
   cursor: pointer;
-  border-radius: $button-border-radius;
+  border-radius: $border-radius;
   border: 1px solid transparent;
   padding: 0.6em 1.2em;
   font-size: 1em;
   font-weight: 500;
   font-family: inherit;
   background-color: $button-color;
-  transition: border-color $input-focus-timing;
+  transition: border-color $timing-input-focus;
 
   &:hover:not([disabled]) {
-    border-color: $hover-color;
+    border: $border-hover-width solid $border-hover-color;
   }
 
   &:focus,
   &:focus-visible {
-    outline: $focus-border-radius auto -webkit-focus-ring-color;
+    outline: $border-focus-width auto -webkit-focus-ring-color;
   }
 }

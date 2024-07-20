@@ -27,7 +27,7 @@ const props = defineProps<{
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
-  border: 1px solid $gray;
+  border: 1px solid $color-gray;
   border-radius: $border-radius;
   padding: $spacing-unit;
   margin: 0 1.5rem;
@@ -41,13 +41,13 @@ const props = defineProps<{
   }
 
   &__starred-count {
-    color: $yellow;
+    color: $color-yellow;
   }
   &__archived-count {
-    color: $pink;
+    color: $color-pink;
   }
   &__total-count {
-    color: $green;
+    color: $color-green;
   }
 }
 </style>

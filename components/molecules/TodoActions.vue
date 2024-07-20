@@ -60,7 +60,7 @@ const onToggleActionPanel = () => {
       margin-left: 0.75rem;
 
       &.trash:hover {
-        color: $red;
+        color: $color-red;
       }
     }
   }

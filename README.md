@@ -17,8 +17,7 @@ The following improvements should be made:
 - Improve responsiveness at lower device widths
 - Handle large todo item names better
 - `button` and `input` should be their own atom components
-- linting added to vitests
-- Refactor to Sass and remove non-used selectors in `assets/css/style.css`
+- Add linting to vitests
 
 ## Setup
 

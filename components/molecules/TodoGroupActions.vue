@@ -38,7 +38,7 @@ const emit = defineEmits(["deleteSelectedClick", "deleteAllClick"]);
   gap: 0.75rem;
 
   .delete-button:hover {
-    color: $red;
+    color: $color-red;
   }
 }
 </style>

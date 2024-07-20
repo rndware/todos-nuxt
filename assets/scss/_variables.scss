@@ -1,22 +1,26 @@
 // Colors
-$black: #242424; 
-$white: rgba(255, 255, 255, 0.87);
-$yellow: rgb(226, 197, 65);
-$red: rgb(237, 98, 98);
-$pink: rgb(203, 139, 208);
-$green: rgb(119, 216, 119);
-$gray: #3d3d3d;
+$color-black: rgb(36, 36, 36);
+$color-white: rgba(255, 255, 255, 0.87);
+$color-yellow: rgb(226, 197, 65);
+$color-red: rgb(237, 98, 98);
+$color-pink: rgb(203, 139, 208);
+$color-green: rgb(119, 216, 119);
+$color-gray: rgb(61, 61, 61);
+$color-light-blue: rgb(100, 108, 255);
 
-$hover-color: #646cff;
+// Borders
+$border-hover-color: $color-light-blue;
+$border-focus-color: $color-light-blue;
+$border-radius: 10px;
+$border-focus-width: 2px;
+$border-hover-width: 2px;
 
 // Spacing
 $spacing-unit: 1rem;
 $spacing-double: 2rem;
 
 // Size
-$border-radius: 10px;
-$focus-border-radius: 4px;
-$min-button-width: 34px;
+$button-min-width: 34px;
 
 // Timing
-$input-focus-timing: 0.25s;
+$timing-input-focus: 0.25s;

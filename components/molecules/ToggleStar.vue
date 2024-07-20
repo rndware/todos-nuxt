@@ -22,7 +22,7 @@ const iconName = computed(() => (props.starred ? "star-fill" : "star"));
   button {
     border-radius: 50%;
     padding: 0.5rem;
-    min-width: $min-button-width;
+    min-width: $button-min-width;
   }
 }
 </style>
