@@ -15,3 +15,10 @@
 .highlighted {
   animation: flash 1s forwards;
 }
+
+// turn off non-essential motion
+@media (prefers-reduced-motion) {
+  .highlighted {
+    animation: none;
+  }
+}
