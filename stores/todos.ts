@@ -62,5 +62,9 @@ export const useTodosStore = defineStore("todos", {
     totalCount(): number {
       return this.todos.length;
     },
+    visibleCount(): number {
+      // archived items are not visible
+      return this.todos.filter(({ archived }) => !archived).length 
+    }
   },
 });

@@ -127,4 +127,14 @@ describe("useTodosStore", () => {
 
     expect(store.totalCount).toBe(2);
   });
+
+  it("computes visible count correctly", () => {
+    const store = useTodosStore();
+    store.createTodo("Todo 1");
+    store.createTodo("Todo 2");
+
+    store.handleAction(TodoAction.Archive, store.todos[1].id);
+
+    expect(store.visibleCount).toBe(1);
+  });
 });

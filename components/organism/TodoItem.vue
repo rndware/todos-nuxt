@@ -62,10 +62,9 @@ const onActionPanelToggle = (showing: boolean) => {
 
 <style scoped lang="scss">
 .todo-item {
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr auto;
   padding: $spacing-unit;
-  align-items: center;
-  justify-content: space-between;
 
   &__starred {
     padding: 0.5rem;

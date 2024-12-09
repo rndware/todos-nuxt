@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { computed } from "vue";
 import { TodoAction, type TodoId, type TodoItemData } from "@/enums";
 import useHighlightNewTodo from "@/composables/useHighlightNewTodo";
 import { parentEmit } from "@/utils/parentEmit";
@@ -8,6 +7,7 @@ import TodoItem from "./TodoItem.vue";
 
 const props = defineProps<{
   todoData: TodoItemData[];
+  showPlaceholder: boolean;
   loading: boolean;
 }>();
 
@@ -15,10 +15,6 @@ const emit = defineEmits<{
   todoActionClick: [actionType: TodoAction, id: TodoId, text?: string];
   todoSelectClick: [id: TodoId];
 }>();
-
-const showPlaceholder = computed(
-  () => props.todoData.length === 0 && !props.loading
-);
 
 // pass all props or breaks reactivity
 const { isHighlighted } = useHighlightNewTodo(props);

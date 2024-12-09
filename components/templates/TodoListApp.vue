@@ -10,8 +10,14 @@ const store = useTodosStore();
 const { handleGroupAction, handleAction, createTodo } = store;
 
 // primitives are not reactive in pinia by default, only objects are
-const { loading, starredCount, archivedCount, totalCount, todos } =
-  storeToRefs(store);
+const {
+  loading,
+  starredCount,
+  archivedCount,
+  totalCount,
+  visibleCount,
+  todos,
+} = storeToRefs(store);
 
 const { selectedTodos, handleSelected, clearSelected } = useSelectTodos();
 
@@ -24,6 +30,8 @@ const onHandleDeleteAll = () => {
   handleGroupAction(TodoGroupAction.DeleteAll);
   clearSelected();
 };
+
+const showPlaceholder = computed(() => visibleCount.value === 0 && !loading.value);
 </script>
 
 <template>
@@ -33,6 +41,7 @@ const onHandleDeleteAll = () => {
     <TodoList
       :todoData="todos"
       :loading="loading"
+      :showPlaceholder="showPlaceholder"
       @todoActionClick="handleAction"
       @todoSelectClick="handleSelected"
     />
