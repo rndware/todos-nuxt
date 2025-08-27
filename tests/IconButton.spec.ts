@@ -3,7 +3,7 @@ import { mount } from "@vue/test-utils";
 
 import { IconButton } from "@/components/atoms";
 
-describe("IconButton", () => {
+describe("Atoms / IconButton.vue", () => {
   it("renders a button with correct class when iconName prop is provided", async () => {
     const iconName = "some-icon";
     const wrapper = mount(IconButton, {

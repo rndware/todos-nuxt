@@ -9,14 +9,14 @@ vi.mock("@/composables/useHighlightNewTodo", () => ({
   default: () => ({ isHighlighted: vi.fn(() => false) }),
 }));
 
-describe("TodoList.vue", () => {
+describe("Organism / TodoList.vue", () => {
   const todoData: TodoItemData[] = [
     { id: "1", text: "Todo 1", archived: false, starred: false },
     { id: "2", text: "Todo 2", archived: false, starred: false },
     { id: "3", text: "Todo 3", archived: true, starred: false },
   ];
 
-  it("renders the correct number of TodoItem components", () => {
+  it("renders the correct number of TodoItem subcomponents", () => {
     const wrapper = mount(TodoList, {
       props: {
         todoData,

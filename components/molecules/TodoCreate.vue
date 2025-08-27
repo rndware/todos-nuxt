@@ -4,6 +4,10 @@ const model = ref<string>("");
 
 const emit = defineEmits(["create"]);
 
+const props = defineProps<{
+  placeholder?: string;
+}>();
+
 const onSubmit = () => {
   if (model.value !== "") {
     emit("create", model.value);
@@ -23,7 +27,7 @@ const onSubmit = () => {
         name="todo-create"
         v-model="model"
         aria-label="Create a new todo item"
-        placeholder=" I need to..."
+        :placeholder="`${props.placeholder || 'I need to...' } `"
         required
       />
     </form>

@@ -3,7 +3,7 @@ import { describe, it, expect } from "vitest";
 
 import { TodoCreate } from "@/components/molecules";
 
-describe("TodoCreate.vue", () => {
+describe("Molecules / TodoCreate.vue", () => {
   it("emits create event with the model value on submit", async () => {
     const wrapper = mount(TodoCreate);
     const input = wrapper.find("input");

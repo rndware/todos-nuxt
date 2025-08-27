@@ -4,20 +4,19 @@ const props = defineProps<{
   archivedCount: number;
   totalCount: number;
 }>();
+
+const counts = computed(() => [
+  { label: 'Starred', value: props.starredCount, class: 'starred' },
+  { label: 'Archived', value: props.archivedCount, class: 'archived' },
+  { label: 'Count', value: props.totalCount, class: 'total' },
+]);
 </script>
 
 <template>
   <section class="todo-info">
-    <div>
-      Starred:
-      <span class="todo-info__starred-count">{{ props.starredCount }}</span>
-    </div>
-    <div>
-      Archived:
-      <span class="todo-info__archived-count">{{ props.archivedCount }}</span>
-    </div>
-    <div>
-      Count: <span class="todo-info__total-count">{{ props.totalCount }}</span>
+    <div v-for="item in counts" :key="item.label" class="todo-info__item">
+      {{ item.label }}:
+      <span :class="['todo-info__count', `todo-info__count--${item.class}`]">{{ item.value }}</span>
     </div>
   </section>
 </template>
@@ -40,13 +39,15 @@ const props = defineProps<{
     font-weight: bold;
   }
 
-  &__starred-count {
+  &__count--starred {
     color: $color-yellow;
   }
-  &__archived-count {
+
+  &__count--archived {
     color: $color-pink;
   }
-  &__total-count {
+
+  &__count--total {
     color: $color-green;
   }
 }

@@ -3,7 +3,7 @@ import { describe, it, expect } from "vitest";
 
 import { TodoGroupActions } from "@/components/molecules";
 
-describe("TodoGroupActions.vue", () => {
+describe("Molecules / TodoGroupActions.vue", () => {
   it("renders properly with default props", () => {
     const wrapper = mount(TodoGroupActions, {
       props: {
@@ -17,7 +17,7 @@ describe("TodoGroupActions.vue", () => {
     expect(wrapper.find(".delete-selected-button").exists()).toBe(true);
   });
 
-  it("enables buttons when there are todos", () => {
+  it("enables controls when there are todos", () => {
     const wrapper = mount(TodoGroupActions, {
       props: {
         loading: false,

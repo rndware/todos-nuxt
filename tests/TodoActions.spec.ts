@@ -5,7 +5,7 @@ import { IconButton } from "@/components/atoms";
 import { TodoActions } from "@/components/molecules";
 import { TodoAction } from "@/types";
 
-describe("TodoActions", () => {
+describe("Molecules / TodoActions.vue", () => {
   it("should toggle showActionPanel on IconButton click", async () => {
     const wrapper = mount(TodoActions);
 

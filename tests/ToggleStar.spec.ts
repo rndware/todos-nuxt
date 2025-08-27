@@ -4,7 +4,7 @@ import { mount } from "@vue/test-utils";
 import { ToggleStar } from "@/components/molecules";
 import { IconButton } from "@/components/atoms";
 
-describe("ToggleStar", () => {
+describe("Molecules / ToggleStar.vue", () => {
   it("renders star icon correctly", async () => {
     const wrapper = mount(ToggleStar, {
       props: {

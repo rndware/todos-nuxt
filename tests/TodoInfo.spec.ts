@@ -3,7 +3,7 @@ import { describe, it, expect } from "vitest";
 
 import { TodoInfo } from "@/components/molecules";
 
-describe("TodoInfo", () => {
+describe("Organism / TodoInfo.vue", () => {
   it("renders the correct counts", () => {
     const wrapper = mount(TodoInfo, {
       props: {

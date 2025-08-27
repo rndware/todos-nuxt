@@ -3,7 +3,7 @@ import { describe, it, expect } from "vitest";
 import TodoItem from "@/components/organism/TodoItem.vue";
 import { TodoAction, type TodoItemData } from "@/types";
 
-describe("TodoItem.vue", () => {
+describe("Organism / TodoItem.vue", () => {
   const todoData = {
     id: "1",
     text: "Test todo",

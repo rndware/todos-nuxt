@@ -4,7 +4,7 @@ import { describe, it, expect } from "vitest";
 import { IconButton } from "@/components/atoms";
 import { EditableText } from "@/components/molecules";
 
-describe("EditableText", () => {
+describe("Molecules / EditableText.vue", () => {
   it("renders text and input fields correctly including toggling via button", async () => {
     const wrapper = mount(EditableText);
 
