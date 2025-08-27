@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { ref } from "vue";
-import { TodoAction } from "@/enums";
+import { TodoAction } from "@/types";
 import { IconButton } from "@/components/atoms";
 
 const emit = defineEmits<{

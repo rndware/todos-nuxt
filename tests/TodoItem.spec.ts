@@ -1,7 +1,7 @@
 import { mount } from "@vue/test-utils";
-import { describe, it, expect, vi } from "vitest";
+import { describe, it, expect } from "vitest";
 import TodoItem from "@/components/organism/TodoItem.vue";
-import { TodoAction, type TodoItemData } from "@/enums";
+import { TodoAction, type TodoItemData } from "@/types";
 
 describe("TodoItem.vue", () => {
   const todoData = {

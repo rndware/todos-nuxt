@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { ref, toRefs } from "vue";
-import { TodoAction, type TodoId, type TodoItemData } from "@/enums";
+import { TodoAction, type TodoId, type TodoItemData } from "@/types";
 import { TodoActions, ToggleStar, EditableText } from "@/components/molecules";
 
 const props = defineProps<{

@@ -2,7 +2,7 @@ import { mount } from "@vue/test-utils";
 import { describe, it, expect, vi } from "vitest";
 import TodoList from "@/components/organism/TodoList.vue";
 import TodoItem from "@/components/organism/TodoItem.vue";
-import { TodoAction, type TodoItemData } from "@/enums";
+import { TodoAction, type TodoItemData } from "@/types";
 
 // Mock the composable
 vi.mock("@/composables/useHighlightNewTodo", () => ({
@@ -20,6 +20,7 @@ describe("TodoList.vue", () => {
     const wrapper = mount(TodoList, {
       props: {
         todoData,
+        showPlaceholder: false,
         loading: false,
       },
     });
@@ -34,6 +35,7 @@ describe("TodoList.vue", () => {
     const wrapper = mount(TodoList, {
       props: {
         todoData: [],
+        showPlaceholder: false,
         loading: true,
       },
     });
@@ -46,6 +48,7 @@ describe("TodoList.vue", () => {
     const wrapper = mount(TodoList, {
       props: {
         todoData: [],
+        showPlaceholder: true,
         loading: false,
       },
     });
@@ -58,6 +61,7 @@ describe("TodoList.vue", () => {
     const wrapper = mount(TodoList, {
       props: {
         todoData,
+        showPlaceholder: false,
         loading: false,
       },
     });
@@ -74,6 +78,7 @@ describe("TodoList.vue", () => {
     const wrapper = mount(TodoList, {
       props: {
         todoData,
+        showPlaceholder: false,
         loading: false,
       },
     });

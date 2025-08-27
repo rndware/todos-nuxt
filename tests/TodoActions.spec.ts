@@ -3,7 +3,7 @@ import { mount } from "@vue/test-utils";
 
 import { IconButton } from "@/components/atoms";
 import { TodoActions } from "@/components/molecules";
-import { TodoAction } from "@/enums";
+import { TodoAction } from "@/types";
 
 describe("TodoActions", () => {
   it("should toggle showActionPanel on IconButton click", async () => {

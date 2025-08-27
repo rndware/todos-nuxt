@@ -4,7 +4,7 @@ import { useTodosStore } from "@/stores/todos";
 import useSelectTodos from "@/composables/useSelectTodos";
 import { TodoCreate, TodoInfo, TodoGroupActions } from "@/components/molecules";
 import { TodoList } from "@/components/organism";
-import { TodoGroupAction } from "@/enums";
+import { TodoGroupAction } from "@/types";
 
 const store = useTodosStore();
 const { handleGroupAction, handleAction, createTodo } = store;

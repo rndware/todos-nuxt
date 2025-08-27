@@ -1,5 +1,5 @@
 import { ref } from "vue";
-import type { TodoId } from "@/enums";
+import type { TodoId } from "@/types";
 
 /**
  * Custom composable function for managing selected todos.

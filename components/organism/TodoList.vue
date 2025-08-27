@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { TodoAction, type TodoId, type TodoItemData } from "@/enums";
+import { TodoAction, type TodoId, type TodoItemData } from "@/types";
 import useHighlightNewTodo from "@/composables/useHighlightNewTodo";
 import { parentEmit } from "@/utils/parentEmit";
 

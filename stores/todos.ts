@@ -5,7 +5,7 @@ import {
   TodoAction,
   type TodoId,
   TodoGroupAction,
-} from "../enums";
+} from "@/types";
 
 export const useTodosStore = defineStore("todos", {
   state: () => ({
@@ -64,7 +64,7 @@ export const useTodosStore = defineStore("todos", {
     },
     visibleCount(): number {
       // archived items are not visible
-      return this.todos.filter(({ archived }) => !archived).length 
+      return this.todos.filter(({ archived }) => !archived).length;
     }
   },
 });
