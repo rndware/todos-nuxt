@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/vue3';
-import ToggleStar from '~/components/molecules/ToggleStar.vue';
+import ToggleStar from '@/components/molecules/ToggleStar.vue';
 
 const meta: Meta<typeof ToggleStar> = {
   title: 'Components/Molecules/ToggleStar',
@@ -7,6 +7,9 @@ const meta: Meta<typeof ToggleStar> = {
   argTypes: {
     starred: { control: 'boolean' },
     onToggle: { action: 'toggled' },
+  },
+  parameters: {
+    layout: 'centered',
   },
 };
 

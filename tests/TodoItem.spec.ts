@@ -1,9 +1,9 @@
 import { mount } from "@vue/test-utils";
 import { describe, it, expect } from "vitest";
-import TodoItem from "@/components/organism/TodoItem.vue";
 import { TodoAction, type TodoItemData } from "@/types";
+import TodoItem from "~/components/organisms/TodoItem.vue";
 
-describe("Organism / TodoItem.vue", () => {
+describe("Organisms / TodoItem.vue", () => {
   const todoData = {
     id: "1",
     text: "Test todo",

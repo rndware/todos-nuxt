@@ -1,9 +1,8 @@
 import { mount } from "@vue/test-utils";
 import { describe, it, expect } from "vitest";
-
 import { TodoInfo } from "@/components/molecules";
 
-describe("Organism / TodoInfo.vue", () => {
+describe("Organisms / TodoInfo.vue", () => {
   it("renders the correct counts", () => {
     const wrapper = mount(TodoInfo, {
       props: {

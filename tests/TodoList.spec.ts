@@ -1,15 +1,15 @@
 import { mount } from "@vue/test-utils";
 import { describe, it, expect, vi } from "vitest";
-import TodoList from "@/components/organism/TodoList.vue";
-import TodoItem from "@/components/organism/TodoItem.vue";
 import { TodoAction, type TodoItemData } from "@/types";
+import TodoList from "~/components/organisms/TodoList.vue";
+import TodoItem from "~/components/organisms/TodoItem.vue";
 
 // Mock the composable
 vi.mock("@/composables/useHighlightNewTodo", () => ({
   default: () => ({ isHighlighted: vi.fn(() => false) }),
 }));
 
-describe("Organism / TodoList.vue", () => {
+describe("Organisms / TodoList.vue", () => {
   const todoData: TodoItemData[] = [
     { id: "1", text: "Todo 1", archived: false, starred: false },
     { id: "2", text: "Todo 2", archived: false, starred: false },

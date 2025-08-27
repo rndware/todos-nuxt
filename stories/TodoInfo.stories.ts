@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/vue3';
-import TodoInfo from '~/components/molecules/TodoInfo.vue';
+import TodoInfo from '@/components/molecules/TodoInfo.vue';
 
 const meta: Meta<typeof TodoInfo> = {
   title: "Components/Molecules/TodoInfo",
@@ -8,6 +8,9 @@ const meta: Meta<typeof TodoInfo> = {
     starredCount: { control: { type: 'number' } },
     archivedCount: { control: { type: 'number' } },
     totalCount: { control: { type: 'number' } },
+  },
+  parameters: {
+    layout: 'centered',
   },
 };
 

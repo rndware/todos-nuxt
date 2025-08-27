@@ -1,4 +1,4 @@
-import EditableText from '~/components/molecules/EditableText.vue';
+import EditableText from '@/components/molecules/EditableText.vue';
 import type { Meta, StoryObj } from '@storybook/vue3';
 
 const meta: Meta<typeof EditableText> = {

@@ -3,7 +3,7 @@ import { storeToRefs } from "pinia";
 import { useTodosStore } from "@/stores/todos";
 import useSelectTodos from "@/composables/useSelectTodos";
 import { TodoCreate, TodoInfo, TodoGroupActions } from "@/components/molecules";
-import { TodoList } from "@/components/organism";
+import { TodoList } from "@/components/organisms";
 import { TodoGroupAction } from "@/types";
 
 const store = useTodosStore();

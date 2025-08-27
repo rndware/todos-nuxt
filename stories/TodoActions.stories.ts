@@ -1,5 +1,5 @@
-import TodoActions from '~/components/molecules/TodoActions.vue';
 import type { Meta, StoryObj } from '@storybook/vue3';
+import TodoActions from '@/components/molecules/TodoActions.vue';
 
 const meta: Meta<typeof TodoActions> = {
   title: "Components/Molecules/TodoActions",
@@ -7,6 +7,9 @@ const meta: Meta<typeof TodoActions> = {
   argTypes: {
     onTodoActionClick: { action: "todoActionClick" },
     onActionPanelToggle: { action: "actionPanelToggle" },
+  },
+  parameters: {
+    layout: 'centered',
   },
 };
 

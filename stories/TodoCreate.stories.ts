@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/vue3";
-import TodoCreate from "~/components/molecules/TodoCreate.vue";
+import TodoCreate from "@/components/molecules/TodoCreate.vue";
 
 const meta: Meta<typeof TodoCreate> = {
   title: "Components/Molecules/TodoCreate",

@@ -11,6 +11,9 @@ const meta: Meta<typeof IconButton> = {
       description: 'Choose the icon to display on the button',
     },
   },
+  parameters: {
+    layout: 'centered',
+  },
 };
 
 export default meta;
