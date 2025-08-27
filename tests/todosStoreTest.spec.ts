@@ -1,9 +1,9 @@
 // useTodosStore.test.ts
 import { setActivePinia, createPinia } from "pinia";
 import { describe, it, expect, beforeEach } from "vitest";
+import { TodoAction, TodoGroupAction } from "@/types";
 
 import { useTodosStore } from "@/stores/todos";
-import { TodoAction, TodoGroupAction } from "@/types";
 
 describe("useTodosStore", () => {
   beforeEach(() => {

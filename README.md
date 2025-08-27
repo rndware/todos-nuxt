@@ -6,16 +6,17 @@ A simple Nuxt 3 Todo App.
 <img src="https://github.com/rndware/todos-nuxt/blob/master/media/update-item.gif" width="65%"/>
 <img src="https://github.com/rndware/todos-nuxt/blob/master/media/multi-task.gif" width="65%"/>
 
-- Created using Vue3, Nuxt.js, TypeScript and Pinia
-- Sass uses [BEM](https://getbem.com/) like syntax
-- Components follow [Atomic Design Methodology](https://atomicdesign.bradfrost.com/chapter-2/)
-- Basic unit testing
+- Developed with **Vue 3**, **Nuxt.js**, **TypeScript**, and **Pinia**  
+- Styled with **Sass**, following [BEM](https://getbem.com/) conventions  
+- Components structured according to [Atomic Design Methodology](https://atomicdesign.bradfrost.com/chapter-2/)  
+- Implemented **basic unit testing**  
+- Integrated **Storybook** for component documentation  
 
 The following improvements should be made:
 
-- Additional unit testing
 - Improve responsiveness at lower device widths
 - Handle large todo item names better
+- Add `autodocs` to Storybook
 - `button` and `input` should be their own atom components
 - Add linting to vitests
 
