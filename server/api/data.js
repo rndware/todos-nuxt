@@ -13,6 +13,12 @@ export default defineEventHandler(async (event) => {
       starred: false,
       archived: false,
     },
+    {
+      id: "4",
+      text: "Hang out clothes to dry",
+      starred: false,
+      archived: false,
+    },
   ];
 
   return { todos: todoData };

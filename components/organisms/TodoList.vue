@@ -49,6 +49,7 @@ const onTodoSelectClick = parentEmit(emit, "todoSelectClick");
   border: 1px solid $color-gray;
   max-width: 28rem;
   overflow: hidden;
+  transition: all 0.3s ease; 
 }
 
 .todo-list__status {

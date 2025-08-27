@@ -63,6 +63,6 @@ const showPlaceholder = computed(() => visibleCount.value === 0 && !loading.valu
 
 <style scoped lang="scss">
 .todo-list-app {
-  padding: $spacing-unit;
+  padding: 3.5rem $spacing-unit;
 }
 </style>

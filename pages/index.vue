@@ -16,3 +16,9 @@ store.$patch({
     <TodoListApp />
   </div>
 </template>
+
+<style scoped lang="scss">
+.todo-list-page {
+  background: #1e1e1e;
+}
+</style>
