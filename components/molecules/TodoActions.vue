@@ -20,13 +20,12 @@ const onToggleActionPanel = () => {
 <template>
   <div class="todo-actions">
     <IconButton
-      class="todo-actions__toggle"
+      :class="['todo-actions__toggle', { 'todo-actions__toggle--active': showActionPanel }]"
       iconName="ellipsis-v"
       @click="onToggleActionPanel"
     />
     <div
       class="todo-actions__panel"
-      :class="{ open: showActionPanel }"
       v-show="showActionPanel"
     >
       <IconButton
@@ -45,12 +44,18 @@ const onToggleActionPanel = () => {
 </template>
 
 <style scoped lang="scss">
+$toggle-background: rgba(255, 255, 255, 0.1);
+
 .todo-actions {
   display: flex;
   align-items: center;
 
   &__toggle {
     padding: 0.5rem;
+  }
+
+  &__toggle--active {
+    background: $toggle-background;
   }
 
   &__panel {

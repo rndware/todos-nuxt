@@ -1,8 +1,37 @@
 <script setup lang="ts">
-import { computed } from "vue";
+import { ref, onMounted, onUnmounted } from 'vue'
 
-// Generate an array [1, 2, 3] to render particles
-const particles = computed(() => [1, 2, 3]);
+const particles = [1, 2, 3];
+const shootingStarActive = ref(false);
+let intervalId: NodeJS.Timeout | null = null;
+const shootingAnimationMs = 3000;
+
+type Range = [number, number];
+
+const triggerShootingStar = () => {
+  shootingStarActive.value = true;
+  
+  // Reset after animation completes (3 seconds)
+  setTimeout(() => {
+    shootingStarActive.value = false;
+    scheduleNextShootingStar();
+  }, shootingAnimationMs);
+};
+
+const scheduleNextShootingStar = (between: Range = [7000, 9000]) => {
+  const randomDelay = Math.random() * (between[1] - between[0]) + between[0];
+  intervalId = setTimeout(triggerShootingStar, randomDelay);
+};
+
+onMounted(() => {
+  scheduleNextShootingStar();
+});
+
+onUnmounted(() => {
+  if (intervalId) {
+    clearInterval(intervalId);
+  }
+});
 </script>
 
 <template>
@@ -13,6 +42,10 @@ const particles = computed(() => [1, 2, 3]);
         v-for="i in particles"
         :key="`particle-${i}`"
         :class="[ 'particle', `particle-${i}` ]"
+      ></div>  
+      <div
+        v-if="shootingStarActive"
+        class="shooting-star"
       ></div>
     </div>
   </div>
@@ -26,7 +59,6 @@ $time-1: 60s;
 $time-2: 120s;
 $time-3: 180s;
 $time-4: 200s;
-
 $particle-sm: 1px;
 $particle-md: 2px;
 $particle-lg: 3px;
@@ -122,6 +154,37 @@ $particle-lg: 3px;
   width: $particle-sm;
 }
 
+.shooting-star {
+  position: absolute;
+  top: -5%;
+  left: -5%;
+  width: $particle-md;
+  height: $particle-md;
+  background: $color-particle;
+  border-radius: 50%;
+  animation: shootingStar 3s linear forwards;
+}
+
+@keyframes shootingStar {
+  0% {
+    transform: translate(0, 0);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  40% {
+    opacity: 0.6;
+  }
+  70% {
+    opacity: 0.2;
+  }
+  100% {
+    transform: translate(calc(105vw), calc(105vh));
+    opacity: 0;
+  }
+}
+
 @keyframes animParticle {
   from {
     transform: translateY(0px);
@@ -136,5 +199,4 @@ $particle-lg: 3px;
   color: $color-particle;
   z-index: 2;
 }
-
 </style>
