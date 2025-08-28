@@ -39,6 +39,16 @@ const onSubmit = () => {
 .todo-create {
   padding: $spacing-double 0;
 
+  &__form {
+    display: flex;
+    justify-content: center;
+    margin-left: -20px;
+  }
+
+  input {
+    width: 250px;
+  }
+
   label {
     margin: 0rem 0.75rem;
   }
