@@ -2,6 +2,8 @@
 
 A simple and fun Nuxt 3 Todo App.
 
+<img src="https://github.com/rndware/todos-nuxt/blob/master/media/video-capture.png" />
+
 ## iPad Air
 
 <img src="https://github.com/rndware/todos-nuxt/blob/master/media/ipad-air.png" width="65%"/>
