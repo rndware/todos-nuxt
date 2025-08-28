@@ -173,10 +173,10 @@ $particle-lg: 3px;
   10% {
     opacity: 1;
   }
-  40% {
+  50% {
     opacity: 0.6;
   }
-  70% {
+  80% {
     opacity: 0.2;
   }
   100% {
