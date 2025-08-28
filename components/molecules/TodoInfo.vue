@@ -37,6 +37,7 @@ const counts = computed(() => [
   }
   span {
     font-weight: bold;
+    margin-left: 0.2rem;
   }
 
   &__count--starred {
