@@ -3,8 +3,8 @@
 A simple and fun Nuxt 3 Todo App.
 
 <img src="https://github.com/rndware/todos-nuxt/blob/master/media/ipad-air.png" width="65%"/>
-<img src="https://github.com/rndware/todos-nuxt/blob/master/media/iphone-pro-max.png" width="35%"/>
-<img src="https://github.com/rndware/todos-nuxt/blob/master/media/iphone-pro-max-2.png" width="35%"/>
+<img src="https://github.com/rndware/todos-nuxt/blob/master/media/iphone-pro-max.png" width="35%" style="display:inline-block;"/>
+<img src="https://github.com/rndware/todos-nuxt/blob/master/media/iphone-pro-max-2.png" width="35%" style="display:inline-block;"/>
 
 - Developed with **Vue 3**, **Nuxt.js**, **TypeScript**, and **Pinia**  
 - Styled with **Sass**, following [BEM](https://getbem.com/) conventions  
