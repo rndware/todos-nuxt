@@ -42,11 +42,11 @@ const onSubmit = () => {
   &__form {
     display: flex;
     justify-content: center;
-    margin-left: -20px;
   }
 
   input {
-    width: 250px;
+    max-width: 230px;
+    width: 100%;
   }
 
   label {
