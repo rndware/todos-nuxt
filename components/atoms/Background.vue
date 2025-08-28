@@ -52,8 +52,8 @@ onUnmounted(() => {
 </template>
 
 <style scoped lang="scss">
-$colorBackground: #1e1e1e;
-$color-particle: #fff;
+$colorBackground: $color-darker-black;
+$color-particle: $color-pure-white;
 $spacing: 2560px;
 $time-1: 60s;
 $time-2: 120s;
