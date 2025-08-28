@@ -28,6 +28,7 @@ const onSubmit = () => {
         v-model="model"
         aria-label="Create a new todo item"
         :placeholder="`${props.placeholder || 'I need to...' } `"
+        autocomplete="off"
         required
       />
     </form>

@@ -1,10 +1,9 @@
 # Nuxt 3 Todo App
 
-A simple Nuxt 3 Todo App.
+A simple and fun Nuxt 3 Todo App.
 
-<img src="https://github.com/rndware/todos-nuxt/blob/master/media/add-new-item.gif" width="65%"/>
-<img src="https://github.com/rndware/todos-nuxt/blob/master/media/update-item.gif" width="65%"/>
-<img src="https://github.com/rndware/todos-nuxt/blob/master/media/multi-task.gif" width="65%"/>
+<img src="https://github.com/rndware/todos-nuxt/blob/master/media/iphone-pro-max.png" width="65%"/>
+<img src="https://github.com/rndware/todos-nuxt/blob/master/media/ipad-air.png" width="65%"/>
 
 - Developed with **Vue 3**, **Nuxt.js**, **TypeScript**, and **Pinia**  
 - Styled with **Sass**, following [BEM](https://getbem.com/) conventions  

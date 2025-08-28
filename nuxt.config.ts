@@ -1,7 +1,7 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   ssr: true,
-  devtools: { enabled: true },
+  devtools: { enabled: false },
   modules: ["@pinia/nuxt", "@nuxtjs/storybook"],
   css: ["primeicons/primeicons.css", '@/assets/scss/main.scss'],
   vite: {

@@ -18,7 +18,7 @@ const triggerShootingStar = () => {
   }, shootingAnimationMs);
 };
 
-const scheduleNextShootingStar = (between: Range = [7000, 9000]) => {
+const scheduleNextShootingStar = (between: Range = [7000, 10000]) => {
   const randomDelay = Math.random() * (between[1] - between[0]) + between[0];
   intervalId = setTimeout(triggerShootingStar, randomDelay);
 };
