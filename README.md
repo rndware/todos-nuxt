@@ -2,7 +2,12 @@
 
 A simple and fun Nuxt 3 Todo App.
 
+## iPad Air
+
 <img src="https://github.com/rndware/todos-nuxt/blob/master/media/ipad-air.png" width="65%"/>
+
+## iPhone Pro Max 
+
 <div style="display: flex; gap: 10px;">
   <img src="https://github.com/rndware/todos-nuxt/blob/master/media/iphone-pro-max-1.png" width="35%"/>
   <img src="https://github.com/rndware/todos-nuxt/blob/master/media/iphone-pro-max-2.png" width="35%"/>
