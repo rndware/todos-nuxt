@@ -1,5 +1,9 @@
-export default defineEventHandler(async (event) => {
-  const todoData = [
+// server/api/todos/index.get.ts
+import { defineEventHandler } from 'h3'
+
+export default defineEventHandler(async () => {
+  // fetch from database
+  return [
     {
       id: "1",
       text: "Invest in unicorn startup",
@@ -20,6 +24,4 @@ export default defineEventHandler(async (event) => {
       archived: false,
     },
   ];
-
-  return { todos: todoData };
-});
+})

@@ -50,6 +50,8 @@ export const useTodosStore = defineStore("todos", {
           item.archived = !item.archived;
           break;
       }
+
+      return item;
     },
   },
   getters: {
