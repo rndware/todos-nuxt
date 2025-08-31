@@ -3,7 +3,7 @@ import { useTodosStore } from "@/stores/todos";
 import { TodoListApp } from "@/components/templates";
 import { Toaster, toast } from "vue-sonner"
 import type { TodoItemData } from "@/types";
-import todos from "@/data/seed.json";
+import seed from "@/data/seed.json";
 
 import "vue-sonner/style.css"
 
@@ -11,8 +11,8 @@ const todosStore = useTodosStore();
 
 async function initTodos() {
   try {
-    const todos = await $fetch<TodoItemData[]>("/api/todos");
-    todosStore.$patch({ todos });
+    const apiData = await $fetch<TodoItemData[]>("/api/todos");
+    todosStore.$patch({ todos: apiData });
   } catch (error) {
     const message = "Failed to fetch todos from API, using fallback data.";
 
@@ -20,7 +20,7 @@ async function initTodos() {
     setTimeout(() => toast(message), 0);
     console.error(message, error);
 
-    todosStore.$patch({ todos });
+    todosStore.$patch({ todos: seed });
   }
 }
 
