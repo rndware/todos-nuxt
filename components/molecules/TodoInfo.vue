@@ -26,7 +26,7 @@ const counts = computed(() => [
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
-  border: 1px solid $color-gray;
+  border: $border-default-width solid $color-gray;
   border-radius: $border-radius;
   padding: $spacing-unit;
   margin: 0 1.5rem $spacing-unit;

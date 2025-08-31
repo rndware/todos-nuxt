@@ -46,7 +46,7 @@ const onTodoSelectClick = parentEmit(emit, "todoSelectClick");
 <style scoped lang="scss">
 .todo-list {
   border-radius: $border-radius;
-  border: 1px solid $color-gray;
+  border: $border-default-width solid $color-gray;
   max-width: 28rem;
   overflow: hidden;
   transition: all $timing-input-focus ease; 

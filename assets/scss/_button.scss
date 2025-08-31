@@ -4,7 +4,7 @@ $button-border-radius: $border-radius;
 button {
   cursor: pointer;
   border-radius: $border-radius;
-  border: 1px solid transparent;
+  border: $border-default-width solid transparent;
   padding: 0.6em 1.2em;
   font-size: 1em;
   font-weight: 500;
