@@ -1,4 +1,5 @@
 import { PrismaClient } from '@prisma/client'
+import data from '@/data/seed.json'
 
 export default defineNitroPlugin(async () => {
   if (process.env.NODE_ENV === 'development') {
@@ -10,32 +11,9 @@ export default defineNitroPlugin(async () => {
       
       if (existingTodos === 0) {
         console.log('🌱 No todos found, seeding database...')
-        
-        const todos = [
-          {
-            text: "Invest in unicorn startup",
-            starred: false,
-            archived: false,
-          },
-          { 
-            text: "Hike 5 miles up hill", 
-            starred: false, 
-            archived: false 
-          },
-          {
-            text: "Pick up pizza for tonight",
-            starred: false,
-            archived: false,
-          },
-          {
-            text: "Hang out clothes to dry",
-            starred: false,
-            archived: false,
-          },
-        ]
 
         await prisma.todo.createMany({
-          data: todos,
+          data,
         })
 
         console.log('✅ Database seeded successfully!')

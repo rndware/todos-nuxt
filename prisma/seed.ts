@@ -1,4 +1,5 @@
 import { PrismaClient } from '@prisma/client'
+import data from '@/data/seed.json'
 
 const prisma = new PrismaClient()
 
@@ -13,31 +14,8 @@ async function main() {
 
   console.log('Seeding todos...')
 
-  const todos = [
-    {
-      text: "Invest in unicorn startup",
-      starred: false,
-      archived: false,
-    },
-    { 
-      text: "Hike 5 miles up hill", 
-      starred: false, 
-      archived: false 
-    },
-    {
-      text: "Pick up pizza for tonight",
-      starred: false,
-      archived: false,
-    },
-    {
-      text: "Hang out clothes to dry",
-      starred: false,
-      archived: false,
-    },
-  ]
-
   await prisma.todo.createMany({
-    data: todos,
+    data,
   })
 
   console.log('Seeding completed!')
