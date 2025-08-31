@@ -67,7 +67,7 @@ export default defineEventHandler(async (event) => {
       todo: updatedTodo,
       message: 'Todo updated successfully'
     }
-  } catch (error) {
+  } catch (error: any) {
     // If it's already a createError, re-throw it
     if (error.statusCode) {
       throw error

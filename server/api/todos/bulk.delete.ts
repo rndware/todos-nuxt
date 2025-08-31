@@ -60,7 +60,7 @@ export default defineEventHandler(async (event) => {
       notFoundIds: notFoundIds.length > 0 ? notFoundIds : undefined,
       message: `Successfully deleted ${deleteResult.count} todo(s)`
     }
-  } catch (error) {
+  } catch (error: any) {
     // If it's already a createError, re-throw it
     if (error.statusCode) {
       throw error

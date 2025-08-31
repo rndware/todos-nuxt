@@ -25,7 +25,7 @@ export default defineEventHandler(async (event) => {
     }
 
     return todo
-  } catch (error) {
+  } catch (error: any) {
     // If it's already a createError, re-throw it
     if (error.statusCode) {
       throw error

@@ -3,7 +3,7 @@ import { useTodosStore } from "@/stores/todos";
 import { TodoListApp } from "@/components/templates";
 import { Toaster, toast } from "vue-sonner"
 import type { TodoItemData } from "@/types";
-import seed from "@/data/seed.json";
+import todos from "@/data/seed.json";
 
 import "vue-sonner/style.css"
 
@@ -13,16 +13,14 @@ async function initTodos() {
   try {
     const todos = await $fetch<TodoItemData[]>("/api/todos");
     todosStore.$patch({ todos });
-
   } catch (error) {
-    console.error("Failed to fetch todos from API:", error);
+    const message = "Failed to fetch todos from API, using fallback data.";
 
     // Use setTimeout to ensure toast is shown after component is mounted
-    setTimeout(() =>{
-      toast("Failed to fetch todos from API, using fallback data.");
-    }, 0);
+    setTimeout(() => toast(message), 0);
+    console.error(message, error);
 
-    todosStore.$patch({ todos: seed });
+    todosStore.$patch({ todos });
   }
 }
 

@@ -34,7 +34,7 @@ export default defineEventHandler(async (event) => {
       deletedId: id,
       message: 'Todo deleted successfully'
     }
-  } catch (error) {
+  } catch (error: any) {
     // If it's already a createError, re-throw it
     if (error.statusCode) {
       throw error
