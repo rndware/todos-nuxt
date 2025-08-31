@@ -10,10 +10,16 @@
     "postinstall": "nuxt prepare",
     "test": "vitest",
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "build-storybook": "storybook build",
+    "db:generate": "prisma generate",
+    "db:push": "prisma db push",
+    "db:migrate": "prisma migrate dev",
+    "db:seed": "tsx prisma/seed.ts",
+    "db:studio": "prisma studio"
   },
   "dependencies": {
     "@pinia/nuxt": "^0.5.1",
+    "@prisma/client": "^6.15.0",
     "nuxt": "^3.12.2",
     "pinia": "^2.1.7",
     "primeicons": "^7.0.0",
@@ -30,6 +36,7 @@
     "@vitejs/plugin-vue-jsx": "^3.1.0",
     "@vue/test-utils": "^2.4.6",
     "jsdom": "^24.1.0",
+    "prisma": "^6.15.0",
     "sass": "^1.77.6",
     "vitest": "^1.6.0"
   }
