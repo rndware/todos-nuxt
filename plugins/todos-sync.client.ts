@@ -26,7 +26,7 @@ export default defineNuxtPlugin(() => {
           // Handle other actions (Edit, Star, Archive) with PUT method
           await $fetch(`/api/todos/${id}`, {
             method: "PUT" as any,
-            body: { result }
+            body: result
           })
         }
       })
