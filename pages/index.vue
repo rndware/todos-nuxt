@@ -32,7 +32,7 @@ async function initTodos() {
     if (serverMostRecent >= clientMostRecent) {
       todosStore.$patch({ todos: apiData });
     } else {
-      $fetch("/api/todos/bulk", {
+      await $fetch("/api/todos/bulk", {
         method: "POST",
         body: todosStore.todos,
       });
