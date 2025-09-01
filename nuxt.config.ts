@@ -2,7 +2,7 @@
 export default defineNuxtConfig({
   ssr: true,
   devtools: { enabled: false },
-  modules: ["@pinia/nuxt", "@nuxtjs/storybook"],
+  modules: ["@pinia/nuxt", "@nuxtjs/storybook", "pinia-plugin-persistedstate/nuxt"],
   css: ["primeicons/primeicons.css", '@/assets/scss/main.scss'],
   vite: {
     css: {

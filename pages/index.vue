@@ -14,13 +14,16 @@ async function initTodos() {
     const apiData = await $fetch<TodoItemData[]>("/api/todos");
     todosStore.$patch({ todos: apiData });
   } catch (error) {
-    const message = "Failed to fetch todos from API, using fallback data.";
+    const message = "Failed to fetch todos from API, using localStorage";
 
     // Use setTimeout to ensure toast is shown after component is mounted
     setTimeout(() => toast(message), 0);
     console.error(message, error);
 
-    todosStore.$patch({ todos: seed });
+    // Fallback to seed data if blank
+    if (todosStore.todos.length === 0) {
+      todosStore.$patch({ todos: seed });
+    }
   }
 }
 
