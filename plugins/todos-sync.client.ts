@@ -33,6 +33,16 @@ export default defineNuxtPlugin(() => {
     }
 
     if (name === "handleGroupAction") {
+      const [actionType] = args
+
+      if (actionType === TodoGroupAction.DeleteAll) {
+        const ids = store.todos.map(t => t.id)
+        $fetch('/api/todos/bulk', {
+          method: 'DELETE',
+          body: { ids }
+        })
+      }
+
       after(async () => {
         const [actionType, selectedIds] = args
 
@@ -40,11 +50,6 @@ export default defineNuxtPlugin(() => {
           await $fetch('/api/todos/bulk', {
             method: 'DELETE',
             body: { ids: selectedIds }
-          })
-        } else if (actionType === TodoGroupAction.DeleteAll) {
-          await $fetch('/api/todos/bulk', {
-            method: 'DELETE',
-            body: { ids: store.todos.map(t => t.id) }
           })
         }
       })
