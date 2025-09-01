@@ -1,5 +1,5 @@
 import { useTodosStore } from "@/stores/todos"
-import { TodoAction, TodoGroupAction } from "~/types"
+import { TodoAction, TodoGroupAction } from "@/types"
 
 export default defineNuxtPlugin(() => {
   const store = useTodosStore()
@@ -36,18 +36,22 @@ export default defineNuxtPlugin(() => {
       after(async () => {
         const [actionType, selectedIds] = args
 
-        // TO-DO: handle delete all
         if (actionType === TodoGroupAction.DeleteRange) {
           await $fetch('/api/todos/bulk', {
             method: 'DELETE',
             body: { ids: selectedIds }
+          })
+        } else if (actionType === TodoGroupAction.DeleteAll) {
+          await $fetch('/api/todos/bulk', {
+            method: 'DELETE',
+            body: { ids: store.todos.map(t => t.id) }
           })
         }
       })
     }
 
     onError((error) => {
-      console.error("API sync failed:", error)
+      console.error("Failed to sync todos with API, using localStorage", error)
     })
   })
 })

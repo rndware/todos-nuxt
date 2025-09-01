@@ -5,4 +5,6 @@ export interface TodoItemData {
   id: TodoId;
   starred: boolean;
   archived: boolean;
+  updatedAt: string;
+  createdAt: string;
 }

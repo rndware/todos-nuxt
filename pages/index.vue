@@ -12,7 +12,31 @@ const todosStore = useTodosStore();
 async function initTodos() {
   try {
     const apiData = await $fetch<TodoItemData[]>("/api/todos");
-    todosStore.$patch({ todos: apiData });
+
+    let serverMostRecent = new Date(apiData[0].updatedAt);
+    for (const todo of apiData) {
+      const updated = new Date(todo.updatedAt);
+      if (updated > serverMostRecent) {
+        serverMostRecent = updated;
+      }
+    }
+
+    let clientMostRecent = new Date(todosStore.todos[0].updatedAt);
+    for (const todo of todosStore.todos) {
+      const updated = new Date(todo.updatedAt);
+      if (updated > clientMostRecent) {
+        clientMostRecent = updated;
+      }
+    }
+
+    if (serverMostRecent >= clientMostRecent) {
+      todosStore.$patch({ todos: apiData });
+    } else {
+      $fetch("/api/todos/bulk", {
+        method: "POST",
+        body: todosStore.todos,
+      });
+    }
   } catch (error) {
     const message = "Failed to fetch todos from API, using localStorage";
 
@@ -39,6 +63,6 @@ await initTodos();
 
 <style scoped lang="scss">
 .todo-list-page {
-  background: #1e1e1e;
+  background: $color-darker-black;
 }
 </style>

@@ -2,21 +2,25 @@
   {
     "text": "Invest in unicorn startup",
     "starred": false,
-    "archived": false
+    "archived": false,
+    "createdAt": "2023-01-01T00:00:00Z"
   },
   {
     "text": "Hike 5 miles up hill",
     "starred": false,
-    "archived": false
+    "archived": false,
+    "createdAt": "2023-01-01T00:00:00Z"
   },
   {
     "text": "Pick up pizza for tonight",
     "starred": false,
-    "archived": false
+    "archived": false,
+    "createdAt": "2023-01-01T00:00:00Z"
   },
   {
     "text": "Hang out clothes to dry",
     "starred": false,
-    "archived": false
+    "archived": false,
+    "createdAt": "2023-01-01T00:00:00Z"
   }
 ]

@@ -20,6 +20,8 @@ export const useTodosStore = defineStore("todos", {
         text,
         starred: false,
         archived: false,
+        updatedAt: new Date().toISOString(),
+        createdAt: new Date().toISOString(),
       });
     },
     handleGroupAction(actionType: TodoGroupAction, selectedIds?: TodoId[]) {
@@ -51,6 +53,7 @@ export const useTodosStore = defineStore("todos", {
           break;
       }
 
+      item.updatedAt = new Date().toISOString();
       return item;
     },
   },
