@@ -14,12 +14,26 @@ await todos.syncTodosWithServer(seed as TodoItemData[]);
 <template>
   <div class="todo-list-page">
     <Toaster richColors />
-    <TodoListApp />
+    <TodoListApp class="fade-in"  />
   </div>
 </template>
 
 <style scoped lang="scss">
 .todo-list-page {
   background: $color-darker-black;
+}
+
+.fade-in {
+  opacity: 0;
+  animation: fadeInQuick 0.3s ease-in-out forwards;
+}
+
+@keyframes fadeInQuick {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 </style>
