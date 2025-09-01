@@ -35,7 +35,7 @@ Make sure to install the dependencies:
 
 ```bash
 # yarn
-yarn install
+npm install
 ```
 
 ## Development Server
@@ -44,11 +44,14 @@ Start the development server on `http://localhost:3000`:
 
 ```bash
 # yarn
-yarn dev
+
+echo "DATABASE_URL="postgresql://postgres:password@localhost:5432/todos_db" > .env
+
+npm run dev
 ```
 
 ## Run vitests
 
 ```bash
-yarn run test
+npm run test
 ```

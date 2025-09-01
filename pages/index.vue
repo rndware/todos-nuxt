@@ -14,7 +14,7 @@ await todos.syncTodosWithServer(seed as TodoItemData[]);
 <template>
   <div class="todo-list-page">
     <Toaster richColors />
-    <TodoListApp class="fade-in"  />
+    <TodoListApp class="fade-in" />
   </div>
 </template>
 
