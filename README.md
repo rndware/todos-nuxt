@@ -47,6 +47,8 @@ Start the development server on `http://localhost:3000`:
 
 echo 'DATABASE_URL="postgresql://postgres:password@localhost:5432/todos_db"' > .env
 
+npm run db:push
+
 npm run dev
 ```
 
