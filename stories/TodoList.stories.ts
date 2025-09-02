@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/vue3';
 import type { TodoItemData } from '@/types';
-import TodoList from '~/components/organisms/TodoList.vue';
+import TodoList from '@/components/organisms/TodoList.vue';
 
 const meta: Meta<typeof TodoList> = {
   title: 'Components/Organisms/TodoList',
@@ -18,9 +18,9 @@ export default meta;
 type Story = StoryObj<typeof TodoList>;
 
 const sampleTodos: TodoItemData[] = [
-  { id: '1', text: 'Learn Vue 3', starred: false, archived: false },
-  { id: '2', text: 'Write Storybook stories', starred: true, archived: false },
-  { id: '3', text: 'Refactor components', starred: false, archived: true },
+  { id: '1', text: 'Learn Vue 3', starred: false, archived: false, createdAt: new Date('2023-01-01').toISOString(), updatedAt: new Date('2023-01-01').toISOString() },
+  { id: '2', text: 'Write Storybook stories', starred: true, archived: false, createdAt: new Date('2023-01-02').toISOString(), updatedAt: new Date('2023-01-02').toISOString() },
+  { id: '3', text: 'Refactor components', starred: false, archived: true, createdAt: new Date('2023-01-03').toISOString(), updatedAt: new Date('2023-01-03').toISOString() },
 ];
 
 export const Default: Story = {

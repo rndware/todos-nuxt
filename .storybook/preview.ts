@@ -1,14 +1,16 @@
-import type { Preview } from '@storybook-vue/nuxt'
+// Global CSS/SCSS for all stories
+import 'primeicons/primeicons.css';
+import '@/assets/scss/main.scss';
 
-const preview: Preview = {
-  parameters: {
-    controls: {
-      matchers: {
-       color: /(background|color)$/i,
-       date: /Date$/i,
-      },
+// Optional Storybook parameters
+export const parameters = {
+  actions: { argTypesRegex: '^on[A-Z].*' },
+  controls: {
+    matchers: {
+      color: /(background|color)$/i,
+      date: /Date$/i,
     },
   },
 };
 
-export default preview;
+export default parameters;
